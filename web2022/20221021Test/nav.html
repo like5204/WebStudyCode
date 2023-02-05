@@ -1,0 +1,84 @@
+<!DOCTYPE HTML5>
+<html>
+	<head>
+		<meta charset="utf8"/>
+		<title>lxl</title>
+		<style>
+			*{margin:0;padding:0;list-style-type:none;}
+			article
+			{
+				width:100%;
+				height:70px;
+				position:relative;
+				background:#ccc;
+			}
+			article>div
+			{
+				width:20%;
+				height:70px;
+				background:#eee;
+				line-height:70px;
+				text-align:center;
+				position:relative;
+			}
+			div>a
+			{
+				width:30px;
+				height:30px;
+				display:block;
+				background:url("img/triangle.png") no-repeat right center/30px 30px;
+				position:absolute;
+				right:0;
+				top:50%;
+				transform:translateY(-50%);
+				/*transition:all 0.6s ease;*/
+			}
+			div>a.active{transform:rotate(0.5turn)}
+			ul
+			{
+				width:20%;
+				border:1px solid black;
+				position:absolute;
+				height:90px;
+				display:none;
+			}
+			li
+			{
+				width:100%;
+				height:30px;
+				line-height:30px;
+				text-align:center;
+			}
+		</style>
+		<script>
+			window.onload=function()
+			{
+				let oDiv = document.querySelector("div");
+				let oUl = document.querySelector("ul");
+				let oa = document.querySelector("div>a");
+				let b = false;
+
+				oDiv.onclick=function()
+				{
+					oUl.style.display = b == true?"none":"block";
+					oa.className = b==true?"":"active";
+					b = !b;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<article>
+			<div>
+				Click me
+				<a href="javascript:;"></a>
+			</div>
+			<ul>
+				<li>First</li>
+				<li>Second</li>
+				<li>Third</li>
+			</ul>
+		</article>
+	</body>
+</html>
+

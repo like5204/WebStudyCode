@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/p.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/myFunction.js" async></script>
+    <title></title>
+    <style>
+        *{margin:0;padding:0;list-style-type:none;box-sizing:border-box;}
+	a{color:black;text-decoration:none;}
+	:root
+	{
+		--qq-green:#31c27c;
+	}
+	body{width:1080px; margin:0 auto 0;border:1px solid #9e9e9e;}
+    	main
+	{
+		width:100%;
+		height:auto;/*中心内容的宽度，不够的话自己加*/
+		overflow:hidden;
+	}
+
+    </style>
+    <script>
+        window.onload=function()
+        {
+		
+		start_move();// 开启页面所有轮播
+		
+		click_tag();	
+		
+	musicPlay();
+		
+
+        }
+    </script>
+</head>
+<body>
+	<audio id="myaudio" src="" controls="false" autoplay  loop="false" hidden="true"></audio>
+       	<header>
+		<div class="header-img"></div>
+		<ul>
+			<li class="active"><a href="javascript:;">音乐馆</a></li>
+			<li><a href="javascript:;">我的音乐</a></li>
+			<li><a href="javascript:;">客户端</a></li>
+			<li><a href="javascript:;">开放平台</a></li>
+			<li><a href="javascript:;">VIP</a></li>
+		</ul>
+
+		<div>
+			<a href="javascript:;"></a>
+			<span>登录</span>
+			<div>开通VIP</div>
+		</div>
+	</header> 
+
+	<div class="sub_nav">
+		<ul>
+			<li class="active"><a href="javascript">首页</a></li>
+			<li><a href="gs.html">歌手</a></li>
+			<li><a href="xd.html">新碟</a></li>
+			<li><a href="phb.html">排行榜</a></li>
+			<li><a href="https://y.qq.com/n/ryqq/category">分类歌单</a></li>
+		</ul>
+	</div>
+
+	<main>
+		<!--歌单推荐-->
+		<div class="mlist-recomm">
+
+			<h1>歌单推荐</h1>
+			<ul class="mlist-text-tag">
+				<li class="active">为你推荐</li>
+				<li>中国风</li>
+				<li>经典</li>
+				<li>网络歌曲</li>
+				<li>官方歌单</li>
+				<li>情歌</li>
+			</ul>
+
+			<div class="mlist-move">
+			<ul>
+				<li>
+					<ul class="mlist-move-item">
+						<li>
+							<div class="mlist-li-img">
+								<div class="show-Img mlist1"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+							</div>
+							<div>《世界杯BGM，你来定</div>
+							<p>播放量:&nbsp;151.7万</p>
+						</li>
+						<li>
+							<div class="mlist-li-img">
+								<div class="show-Img mlist2"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+							</div>
+							<div>难忘金典:回放磁带里的青春岁月</div>
+							<p>播放量:&nbsp;1962.7万</p>
+						</li>
+						<li>
+							<div class="mlist-li-img">
+								<div class="show-Img mlist3"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+							</div>
+							<div>500+车载KTV：不会也要跟着唱</div>
+							<p>播放量:&nbsp;2644.2万</p>
+						</li>
+						<li>
+							<div class="mlist-li-img">
+								<div class="show-Img mlist4"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+							</div>
+							<div>K-pop沦陷手册|轰趴制造派对</div>
+							<p>播放量:&nbsp;1151.6万</p>
+						</li>
+						<li>
+							<div class="mlist-li-img">
+								<div class="show-Img mlist5"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+							</div>
+							<div>治愈|在慢歌里享受独处的时光</div>
+							<p>播放量:&nbsp;1419.9万</p>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<ul class="mlist-move-item">
+						<li>
+							<div class="mlist-li-img">
+								<div class="show-Img mlist6"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+							</div>
+							<div>下班即兴唱！打工人必修的解压歌哦</div>
+							<p>播放量:&nbsp;1293.2万</p>
+						</li>
+						<li>
+							<div class="mlist-li-img">
+								<div class="show-Img mlist7"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+							</div>
+							<div>0.8x慢速降调听，想不远的人</div>
+							<p>播放量:&nbsp;1750.6万</p>
+						</li>
+						<li>
+							<div class="mlist-li-img">
+								<div class="show-Img mlist8"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+							</div>
+							<div>海外爆火神曲</div>
+							<p>播放量:&nbsp;3346.9万</p>
+						</li>
+						<li>
+							<div class="mlist-li-img">
+								<div class="show-Img mlist9"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+							</div>
+							<div>儿歌抖音最火</div>
+							<p>播放量:&nbsp;3233.0万</p>
+						</li>
+						<li>
+							<div class="mlist-li-img">
+								<div class="show-Img mlist10"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+							</div>
+							<div>治愈系|希望岁月让我们变得更好</div>
+							<p>播放量:&nbsp;1725.4万</p>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<ul class="mlist-move-item">
+						<li>
+							<div class="mlist-li-img">
+								<div class="show-Img mlist11"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+							</div>
+							<div>开口即惊艳!好评如潮的神仙歌曲</div>
+							<p>播放量:&nbsp;1422.1万</p>
+						</li>
+						<li>
+							<div class="mlist-li-img">
+								<div class="show-Img mlist12"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+							</div>
+							<div>101次悸动!美到窒息的神仙女声</div>
+							<p>播放量:&nbsp;1099.8万</p>
+						</li>
+						<li>
+							<div class="mlist-li-img">
+								<div class="show-Img mlist13"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+							</div>
+							<div>马嘉祺.赤诚少年,天数歌手</div>
+							<p>播放量:&nbsp;191.1万</p>
+						</li>
+						<li>
+							<div class="mlist-li-img">
+								<div class="show-Img mlist14"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+							</div>
+							<div>90后印记|最难以割舍的金典旋律</div>
+							<p>播放量:&nbsp;1642.7万</p>
+						</li>
+						<li>
+							<div class="mlist-li-img">
+								<div class="show-Img mlist15"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+							</div>
+							<div>解压神曲|坏情绪无处可逃</div>
+							<p>播放量:&nbsp;1105.2万</p>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<ul class="mlist-move-item">
+						<li>
+							<div class="mlist-li-img">
+								<div class="show-Img mlist16"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+							</div>
+							<div>中文DJ舞曲,全程劲爆不嗨你找我</div>
+							<p>播放量:&nbsp;4473.5万</p>
+						</li>
+						<li>
+							<div class="mlist-li-img">
+								<div class="show-Img mlist17"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+							</div>
+							<div>热门车载DJ:困意一听而过</div>
+							<p>播放量:&nbsp;1004.5万</p>
+						</li>
+						<li>
+							<div class="mlist-li-img">
+								<div class="show-Img mlist18"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+							</div>
+							<div>90后必备|奏响回忆的时代乐章</div>
+							<p>播放量:&nbsp;4319.7万</p>
+						</li>
+						<li>
+							<div class="mlist-li-img">
+								<div class="show-Img mlist19"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+							</div>
+							<div>车载DJ热歌:轻松一路Fun肆嗨!</div>
+							<p>播放量:&nbsp;1790.9万</p>
+						</li>
+						<li>
+							<div class="mlist-li-img">
+								<div class="show-Img mlist20"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+							</div>
+							<div>耳机控收藏,享受另类孤独情绪</div>
+							<p>播放量:&nbsp;2653.3万</p>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<ul class="mlist-move-item">
+						<li>
+							<div class="mlist-li-img">
+								<div class="show-Img mlist21"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+							</div>
+							<div>KTV必点金曲,释放你的麦霸范儿</div>
+							<p>播放量:&nbsp;1343.3万</p>
+						</li>
+						<li>
+							<div class="mlist-li-img">
+								<div class="show-Img mlist22"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+							</div>
+							<div>100首伤感情歌,深夜和你最难熬</div>
+							<p>播放量:&nbsp;3887.6万</p>
+						</li>
+						<li>
+							<div class="mlist-li-img">
+								<div class="show-Img mlist23"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+							</div>
+							<div>贝乐虎经典儿歌</div>
+							<p>播放量:&nbsp;1500.2万</p>
+						</li>
+						<li>
+							<div class="mlist-li-img">
+								<div class="show-Img mlist24"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+							</div>
+							<div>70.80.90的回忆经典老歌500首</div>
+							<p>播放量:&nbsp;6516.8万</p>
+						</li>
+						<li>
+							<div class="mlist-li-img">
+								<div class="show-Img mlist25"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+							</div>
+							<div>去吹海风吧，让它带走所有的烦心事</div>
+							<p>播放量:&nbsp;1861.7万</p>
+						</li>
+					</ul>
+				</li>
+
+			</ul>
+				<div class="mlist-marker-left marker"><a href="javascript:;"></a></div>
+				<div class="mlist-marker-right marker"><a href="javascript:;"></a></div>
+			</div>
+
+			<div class="mode_slide_switch">
+				<a class="active" href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+			</div>
+
+		</div>
+
+		<!--新歌首发-->
+		<div class="mod_index--song">
+			<h1>新歌首发</h1>
+			<ul class="mlist-text-tag">
+				<li class="active">最新</li>
+				<li>内地</li>
+				<li>港台</li>
+				<li>欧美</li>
+				<li>韩国</li>
+				<li>日本</li>
+			</ul>
+
+			<div class="mod_index-song-content">
+				<div class="side_list">
+					<div class="debutlist_list">
+						<ul>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song1"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song2"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song3"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song4"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song5"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song6"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song7"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song8"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song9"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						
+						</ul>
+					</div>
+					<div class="debutlist_list">
+						<ul>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song10"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song11"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song12"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song13"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song14"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song15"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song16"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song17"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song18"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						
+						</ul>
+						</div>
+					<div class="debutlist_list">
+						<ul>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song19"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song20"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song21"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song22"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song23"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song24"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song25"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song26"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						<li>
+							<div class="song-list-left">
+								<div class="show-img song27"></div>
+								<div class="show-icon"></div>
+								<div class="show-btn"></div>
+
+							</div>
+							<div class="song-list-right">
+								<p>不莱梅城的乐师(Musi</p>
+								<div>丁爽/郭一凡/裘得/...</div>
+							</div>
+							<div>20:23</div>
+						</li>
+						
+						</ul>
+					</div>
+					
+
+
+				</div>
+					<div class="mlist-marker-left marker"><a href="javascript:;"></a></div>
+					<div class="mlist-marker-right marker"><a href="javascript:;"></a></div>
+			
+
+				
+			</div>
+
+			<div class="mode_slide_switch">
+				<a class="active" href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+			</div>
+		</div>
+		
+		<!--精彩推荐-->
+		<div class="mod_slide_box">
+			<h1>精彩推荐</h1>
+			<div class="slide-box-section">
+				<div class="slide-box-move">
+					<div class="slide-box-ul">
+						<ul>
+							<li><img src="img/slideBox/slideBox-1.jpg"/></li>
+							<li><img src="img/slideBox/slideBox-2.jpg"/></li>
+						</ul>
+					</div>
+					<div class="slide-box-ul">
+						<ul>
+							<li><img src="img/slideBox/slideBox-3.jpg"/></li>
+							<li><img src="img/slideBox/slideBox-4.jpg"/></li>
+						</ul>
+					</div>
+					<div class="slide-box-ul">
+						<ul>
+							<li><img src="img/slideBox/slideBox-5.jpg"/></li>
+							<li><img src="img/slideBox/slideBox-6.jpg"/></li>
+						</ul>
+					</div>
+					<div class="slide-box-ul">
+						<ul>
+							<li><img src="img/slideBox/slideBox-7.jpg"/></li>
+							<li><img src="img/slideBox/slideBox-8.jpg"/></li>
+						</ul>
+					</div>
+					<div class="slide-box-ul">
+						<ul>
+							<li><img src="img/slideBox/slideBox-9.jpg"/></li>
+							<li><img src="img/slideBox/slideBox-10.jpg"/></li>
+						</ul>
+					</div>
+				</div>
+				
+				
+					<div class="mlist-marker-left marker"><a href="javascript:;"></a></div>
+					<div class="mlist-marker-right marker"><a href="javascript:;"></a></div>
+
+			</div>
+
+			<div class="mode_slide_switch">
+				<a class="active" href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+			</div>
+	
+		</div>
+		
+		<!--排行榜-->
+		<div class="mod_slide_top">
+			<h1>排行榜</h1>
+
+			<div class="toplist">
+				<ul>
+					<li>
+						<div class="toplist-top">
+							<div>
+							<p>巅峰榜</P>
+							<p>热歌</p>
+							</div>
+							<div class="toplist-line">
+								<a href="javascript:;"></a>
+								<div class="dis_btn"></div>
+							</div>
+						</div>
+
+						<div class="toplist-bottom">
+							<ul>
+								<li>
+									<div class="toplist-num">1</div>
+									<div class="toplist-song-name">
+										<p>Letting Go</p>
+										<p>蔡健雅</p>
+									</div>
+								</li>
+								<li>
+									<div class="toplist-num">2</div>
+									<div class="toplist-song-name">
+										<p>多远都要在一起</p>
+										<p>邓紫棋</p>
+									</div>
+								</li>
+								<li>
+									<div class="toplist-num">3</div>
+									<div class="toplist-song-name">
+										<p>爱是无畏的冒险</p>
+										<p>程今</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="toplist-top">
+							<div>
+							<p>巅峰榜</P>
+							<p>新歌</p>
+							</div>
+							<div class="toplist-line">
+								<a href="javascript:;"></a>
+								<div class="dis_btn"></div>
+							</div>
+						</div>
+
+						<div class="toplist-bottom">
+							<ul>
+								<li>
+									<div class="toplist-num">1</div>
+									<div class="toplist-song-name">
+										<p>迟来的情话(0.8x)</p>
+										<p>Zkaaai</p>
+									</div>
+								</li>
+								<li>
+									<div class="toplist-num">2</div>
+									<div class="toplist-song-name">
+										<p>偷</p>
+										<p>马嘉祺</p>
+									</div>
+								</li>
+								<li>
+									<div class="toplist-num">2</div>
+									<div class="toplist-song-name">
+										<p>客厅狂欢</p>
+										<p>王源</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="toplist-top">
+							<div>
+							<p>巅峰榜</P>
+							<p>流行指数</p>
+							</div>
+							<div class="toplist-line">
+								<a href="javascript:;"></a>
+								<div class="dis_btn"></div>
+							</div>
+						</div>
+
+						<div class="toplist-bottom">
+							<ul>
+								<li>
+									<div class="toplist-num">1</div>
+									<div class="toplist-song-name">
+										<p>偷</p>
+										<p>马嘉祺</p>
+									</div>
+								</li>
+								<li>
+									<div class="toplist-num">2</div>
+									<div class="toplist-song-name">
+										<p>早安隆回</p>
+										<p>袁树雄</p>
+									</div>
+								</li>
+								<li>
+									<div class="toplist-num">3</div>
+									<div class="toplist-song-name">
+										<p>为你写下这首情歌</p>
+										<p>五月天</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="toplist-top">
+							<div>
+							<p>巅峰榜</P>
+							<p>欧美</p>
+							</div>
+							<div class="toplist-line">
+								<a href="javascript:;"></a>
+								<div class="dis_btn"></div>
+							</div>
+						</div>
+
+						<div class="toplist-bottom">
+							<ul>
+								<li>
+									<div class="toplist-num">1</div>
+									<div class="toplist-song-name">
+										<p>Tukoh Taka</p>
+										<p>Nicki Mingj</p>
+									</div>
+								</li>
+								<li>
+									<div class="toplist-num">2</div>
+									<div class="toplist-song-name">
+										<p>Did you know th...</p>
+										<p>Lana Del Rey</p>
+									</div>
+								</li>
+								<li>
+									<div class="toplist-num">3</div>
+									<div class="toplist-song-name">
+										<p>Kill Bill</p>
+										<p>SZA</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="toplist-top">
+							<div>
+							<p>巅峰榜</P>
+							<p>韩国</p>
+							</div>
+
+							<div class="toplist-line">
+								<a href="javascript:;"></a>
+								<div class="dis_btn"></div>
+							</div>
+						</div>
+
+						<div class="toplist-bottom">
+							<ul>
+								<li>
+									<div class="toplist-num">1</div>
+									<div class="toplist-song-name">
+										<p>Cheshire</p>
+										<p>ITZY(있지)</p>
+									</div>
+								</li>
+								<li>
+									<div class="toplist-num">2</div>
+									<div class="toplist-song-name">
+										<p>Beautiful Christ...</p>
+										<p>Red Velvet</p>
+									</div>
+								</li>
+								<li>
+									<div class="toplist-num">3</div>
+									<div class="toplist-song-name">
+										<p>Dreamers</p>
+										<p>Jung Kook</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+									
+				</ul>
+			</div>
+		</div>
+
+	</main>
+
+	<footer>
+		<div class="footer-brand">
+			<div>
+			<div class="footer-down">
+				<p>下载QQ音乐客户端</p>
+
+				<ul>
+					<li><div class="footer-icon"></div><p>PC版</p></li>
+					<li><div class="footer-icon"></div><p>Mac版</p></li>
+					<li><div class="footer-icon"></div><p>Android版</p></li>
+					<li><div class="footer-icon"></div><p>iPhone版</p></li>
+				</ul>
+			</div>
+			<div class="footer-product">
+				<p>特色产品</p>
+
+				<ul>
+					<li><div class="footer-icon"></div><p>PC版</p></li>
+					<li><div class="footer-icon"></div><p>Mac版</p></li>
+					<li><div class="footer-icon"></div><p>Android版</p></li>
+					<li><div class="footer-icon"></div><p>iPhone版</p></li>
+				</ul>
+
+				
+			</div>
+			<div class="footer-link">
+				<p>合作链接</p>
+
+				<ul>
+					<li>
+						<span>CJ&nbsp;ENM</span>
+						<span>腾讯视频</span>
+					</li>
+
+					<li>
+						<span>手机QQ空间</span>
+						<span>最新版QQ</span>
+					</li>
+
+					<li>
+						<span>腾讯社交广告</span>
+						<span>电脑管家</span>
+					</li>
+					
+					<li>
+						<span>QQ浏览器</span>
+						<span>腾讯微云</span>
+					</li>
+					
+					<li>
+						<span>腾讯云</span>
+						<span>企鹅FM</span>
+					</li>
+
+					<li>
+						<span>智能电视网</span>
+						<span>当贝市场</span>
+					</li>
+					<li>
+						<span>酷我音乐</span>
+						<span>酷狗听书</span>
+					</li>
+			</div>
+			</div>
+		</div>
+
+		<div class="footer_copyright">
+			<div>
+				<p>关于腾讯 |About Tencent |服务条款 |用户服务协议 |隐私政策 |权利声明 |广告服务 |腾讯招聘 |客服中心 |网站导航 |举报中心</p>
+				
+				<p>Copyright © 1998 - 2022 Tencent. All Rights Reserved.</p>
+
+				<p>腾讯公司 版权所有｜营业执照｜网络文化经营许可证：粤网文[2020]3396-195号｜客服电话：4006016666｜违法与不良信息举报邮箱：tme_musicjubao@tencentmusic.com</p>
+			</div>
+		</div>
+	</footer>
+
+	<script src="js/1.js"></script>
+</body>
+</html>

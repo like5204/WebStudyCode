@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>Hello World</title>
+<meta charset="utf8"/>
+<style>
+input[type=text]
+{
+border:1px solid black;
+}
+.w{font-size:13px; color:#ccc;}
+</style>
+</head>
+<body>
+<form method="get" action="/">
+<fieldset style="width:500px;height:800px;">
+<legend>个人资料</legend>
+
+<p>基本资料&nbsp;&nbsp;头像图片</p>
+<hr/>
+
+<table cellspacing="0"  width="500px"  cellpadding="3px">
+
+<tr><td colspan=2>亲爱的xxx，请填写真实的资料.</td></tr>
+
+<tr>
+<td>当前头像:</td>
+<td><img src="touxiang.png" width="60px" height="80px"/></td>
+</tr>
+
+<tr>
+<td>*昵称:</td>
+<td><input type="text" /></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+<td class="w">*昵称填写须知：想想想想想想想</td>
+</tr>
+
+<tr>
+<td>真实姓名:</td>
+<td><input type="text"/></td>
+</tr>
+
+<tr>
+<td>*性别: </td>
+<td>
+<label for="nan">男<input id="nan" name="sex"  type="radio" checked />&nbsp;</label>
+<label for"nv">女<input id="nv"  type="radio" name="sex" value="女" /></label>
+</td>
+</tr>
+
+<tr>
+<td>生日: </td>
+<td>
+<select>
+<option>年</option>
+<option>2022</option>
+</select>
+<select>
+<option>月</option>
+<option>12</option>
+</select>
+<select>
+<option>日</option>
+<option>12</option>
+</select>
+
+
+(保密)
+	</td>
+	<td>
+	星座:
+	<select>
+	<option>星座</option>
+	<option>白羊</option>
+	</select>
+	</td>
+	</tr>
+
+	<tr>
+	<td>居住地: </td>
+	<td>
+	<select>
+	<option>省</option>
+	</select>
+	<select>
+	<option>市/区</option>
+	</select>
+	</td>
+	</tr>
+
+	<tr>
+	<td>家乡: </td>
+	<td>
+	<select>
+	<option>省</option>
+	</select>
+	<select>
+	<option>市/区</option>
+	</select>
+	</td>
+	</tr>
+	</table>
+	<br/><br/>
+	<hr/>
+	<br/><br/>
+
+	<input type="submit" value="提交" style="background:orange; color:white;" />
+	</fieldset>
+	</form>
+	
+	</body>
+	</html>

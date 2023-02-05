@@ -1,0 +1,413 @@
+<!DOCTYPE HTML5>
+<html>
+	<head>
+		<meta charset="utf8"/>
+		<title>lxl</title>
+		<script src="tool.js" async></script>
+		<style>
+			*{margin:0;padding:0;box-sizing:border-box;list-style-type:none;}
+			body{background:#f5f5f5;}
+			body>div
+			{
+				width:100%;
+				border-bottom:1px solid #ccc;
+				background:#f5f5f5;
+			}
+			body>div>p
+			{
+				width:80%;
+				text-align:right;
+			}
+			article
+			{
+				width:80%;
+				margin:0 auto 0;	
+			}
+			header
+			{
+				width:100%;
+				height:70px;
+				display:flex;
+				align-items:center;
+				background:#776e65;
+			}
+			header ul
+			{
+				width:80%;
+				display:flex;
+				justify-content:space-evenly;
+			}
+			header div
+			{
+				width:20%;
+				position:relative;
+			}
+			header div:before
+			{
+				width:30px;
+				height:30px;
+				display:block;
+				content:"";
+				position:absolute;
+				right:50px;
+				background:url("img/search.jpg") no-repeat center/contain;
+			}
+			header div input
+			{
+				width:80%;
+				height:40%;
+			}
+			main
+			{
+				width:100%;
+				margin-top:15px;
+				background:#ccc;
+			}
+			#showImg
+			{
+				width:100%;
+				height:auto;
+				position:relative;
+			}
+			.imgBox
+			{
+				width:100%;
+				position:relative;
+				overflow:hidden;
+				height:314px;
+			}
+			.imgBox ul
+			{
+				width:300%;
+				height:100%;
+				position:absolute;
+				left:0;
+			}
+			.imgBox ul  > li
+			{
+				width:33.3%;
+				height:100%;
+				float:left;
+			}
+			.imgBox li:nth-of-type(1){background:url("img/ad2.jpg") no-repeat center/cover;}
+			.imgBox li:nth-of-type(2){background:url("img/ad3.jpg") no-repeat center/cover;}
+			.imgBox li:nth-of-type(3){background:url("img/ad4.jpg") no-repeat center/cover;}
+			#cirBtn
+			{
+				width:100%;
+				height:15px;
+				position:absolute;
+				bottom:0;
+				display:flex;
+				align-items:center;
+				justify-content:center;
+			}
+			#cirBtn a
+			{
+				display:block;
+				width:10px;
+				height:10px;
+				border-radius:50%;
+				border:1px solid white;
+				margin-left:8px;
+			}
+			#cirBtn a.active
+			{
+				background:white;
+			}
+			.tagBox
+			{
+				width:100%;
+				height:20px;
+				margin-top:3px;
+				background:#686868;
+			}
+			.tagBox li
+			{
+				width:33%;
+				height:15px;
+				float:left;
+				border-right:1px solid white;
+			}
+			.tagBox li.active
+			{
+				background:black;
+			}
+			.tagBox li:last-child{border:none;}
+			#msg
+			{
+				width:100%;
+				height:auto;
+				background:#ffffff;
+				display:flex;
+				align-items:center;
+				justify-content:space-between;
+			}
+			#msg >div
+			{
+				border:1px solid #eee;
+			}
+			.tit-box
+			{
+				width:100%;
+				height:35px;
+				padding:6px 15px;
+				color:#6c7a7a;
+				border-bottom:2px solid #ccc;
+			}
+			.tit-box > p
+			{
+				width:50%;
+				float:left;
+			}
+			.tit-box>p:last-child{text-align:right;}
+			.left-msg
+			{
+				width:34%;
+				padding:6px;
+			}
+			.img-tit
+			{
+				width:100%;
+				height:100px;
+				display:flex;
+				justify-content:space-between;
+			}
+			.img-tit img{width:30%;}
+			.img-tit ul
+			{
+				width:65%;
+			}
+			.img-tit ul li
+			{
+				width:100%;
+				height:24px;
+				line-height:24px;
+			}
+			.img-tit ul li:first-child{color:red;font-weight:bold;}
+			.left-msg .img-tit ul li:last-child{color:red;}
+			.moreMsg
+			{
+				width:100%;
+			}
+			.moreMsg li
+			{
+				width:100%;
+				height:24px;
+				border-bottom:1px dashed #ccc;
+				margin-top:10px;
+				text-indent:12px;
+				position:relative;
+			}
+			.moreMsg li span
+			{
+				color:#dedede;
+				font-size:14px;
+				float:right;
+			}
+			.moreMsg li:before
+			{
+				content:"";
+				display:block;
+				position:absolute;
+				width:5px;
+				height:15px;
+				background:url("img/list.jpg") no-repeat center/contain;
+			}
+			.main-msg
+			{
+				width:39%;
+				height:285px;
+			}
+
+			.main-msg .img-tit+div
+			{
+				width:100%;
+				height:150px;
+				background:#eee;
+				display:flex;
+				align-items:center;
+				justify-content:center;
+			}
+			.main-msg .img-tit+div > ul{width:100%;height:20%;display:flex;justify-content:center;align-items:center;}
+			.main-msg .img-tit+div>ul>li{width:25%;text-align:center;}
+			.right-msg
+			{
+				width:24%;
+				height:285px;
+			}
+
+			.right-msg > img
+			{
+				width:100%;
+				height:30%;
+			}
+			.right-msg > a{width:100%;height:30%;}
+			
+		</style>
+		<script>
+			window.onload=function()
+			{
+				let oUl = document.querySelector(".imgBox ul");
+				let oBox = document.querySelector("#showImg");
+					
+				const BW = parseInt(getStyle(oBox,"width"));
+
+				let currIndex = 0;
+
+				let aBtn = document.querySelectorAll("#cirBtn>a");
+
+				let aLi = document.querySelectorAll(".tagBox>li");
+
+				let timer = null;
+				for(let i = 0; i < aBtn.length;i++)
+				{
+					aBtn[i].onclick=function()
+					{
+						if(i == currIndex)return;
+						
+						currIndex = i;
+						
+						moveImg();
+					}
+				}
+				
+				function moveImg()
+				{
+						Array.from(aBtn).map(item=>item.classList.remove("active"));
+						Array.from(aLi).map(item=>item.classList.remove("active"));
+
+						aBtn[currIndex].classList.add("active");
+						aLi[currIndex].classList.add("active");
+						MyStartMove(oUl,"left",-currIndex*BW)
+				}
+
+
+				timer = setInterval(function()
+				{
+					currIndex++;
+					if(currIndex>2)
+					currIndex=0;
+					
+					moveImg();
+					
+				},3000)
+
+				let oas = document.querySelectorAll("body>div>p>a");
+				oas[0].onclick=function(){alert("现在这是你的首页")}
+				oas[1].onclick=function(){alert("现在你已经收藏了该网页")}
+				oas[2].onclick=function(){alert("请添加QQ:472338795")}
+
+			}
+		</script>
+	</head>
+	<body>
+		<div><p><a href="#">设为首页</a> <a href="#">加入收藏</a> <a href="#">联系我们</a></p></div>
+		<article>
+			<header>
+				<ul>
+					<li>首页</li>
+					<li>教育产品</li>
+					<li>技术支持</li>
+					<li>教育案例</li>
+					<li>关于我们</li>
+					<li>招纳贤士</li>
+				</ul>
+
+				<div>
+					<input type="text" />
+				
+				</div>
+			</header>
+
+			<main>
+				<div id="showImg">
+					<div class="imgBox">
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+					</div>
+					<div id="cirBtn">
+						<a href="#" class="active"></a>
+						<a href="#"></a>
+						<a href="#"></a>
+					</div>
+
+					<ul class="tagBox">
+						<li class="active"></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+
+
+				<div id="msg">
+					<div class="left-msg">
+						<div class="tit-box">
+							<p>新闻中心</p>
+							<p>More&lt;&lt;</p>
+						</div>
+
+						<div class="img-tit">
+							<img src="img/news.jpg"/>
+							<ul>
+								<li>520幕女神喊你来表白</li>
+								<li>活动时间: 5月20日-5月25日</li>
+								<li>获奖公布时间5月26日</li>
+								<li>Learn More&lt;&lt;</li>
+							</ul>
+					
+						</div>
+
+						<ul class="moreMsg">
+							<li>【幕客访谈&nbsp;用户篇】"有为屌丝"在路上 <span>2014-06-01</span></li>
+							<li>【幕客访谈&nbsp;用户篇】"有为屌丝"在路上 <span>2014-06-01</span></li>
+							<li>【幕客访谈&nbsp;用户篇】"有为屌丝"在路上 <span>2014-06-01</span></li>
+							<li>【幕客访谈&nbsp;用户篇】"有为屌丝"在路上 <span>2014-06-01</span></li>	
+						</ul>
+
+					</div>
+
+
+					<div class="main-msg">
+						<div class="tit-box">
+							<p>新闻中心</p>
+							<p>More&lt;&lt;</p>
+						</div>
+						
+						<div class="img-tit">
+							<img src="img/1.jpg"/>
+							<ul>
+								<li>CSS圆角进化论</li>
+								<li>CSS圆角的实现,经历了三大发展阶段;
+								图片方式,CSS2.0+HTML标签模拟,CSS3.0
+								</li>
+							</ul>
+						</div>
+
+						<div>
+							<ul>
+								<li>A</li>
+								<li>B</li>
+								<li>C</li>
+								<li>D</li>
+							</ul>
+						</div>
+					</div>
+					<div class="right-msg">
+						<div class="tit-box">
+							<p>新闻中心</p>
+							<p>More&lt;&lt;</p>
+						</div>
+						<a href="https://www.bilibili.com"><img src="img/css.jpg"/></a>
+
+						<img src="img/app.jpg"/>
+					</div>
+				</div>
+			</main>
+		</article>
+	</body>
+</html>
+

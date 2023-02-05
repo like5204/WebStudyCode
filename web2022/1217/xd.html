@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/p.css">
+    <title></title>
+    <style>
+        *{margin:0;padding:0;list-style-type:none;box-sizing:border-box;}
+	a{color:black;text-decoration:none;}
+	:root{--qq-green:#31c27c;}
+    	main
+	{
+		width:100%;
+		height:1600px;/*中心内容的宽度，不够的话自己加*/
+		display:flex;
+		justify-content:center;
+	}
+	main>div>div{width: 320px;height: 400px;border: 0px solid black;float:left;}
+	main>div{width: 90%; height:auto;}
+	
+	main>div>div> ul li
+	{
+		width:300px;
+		height:350px;
+	}
+	main>div>div>ul>li>a:first-child
+	{
+		width:300px;
+		height:300px;
+		display:block;
+		overflow:hidden;
+		position:relative;
+	}
+	main>div>div>ul li>a>img
+	{
+		display:flex;
+		width:300px;
+		height:300px;
+		position:absolute;
+		left:0;
+		top:0;
+		opacity:0.8;
+		transition:all ease .5s;
+		overflow:hidden;
+	}
+	main>div>div>ul>li>a>img:last-child
+	{
+		width:80px;
+		z-index:10;
+		height:80px;
+		left:50%;
+		top:50%;
+		transform:translate(-50%,-50%);
+	}
+	main>div>div>ul>li>a>img:last-child
+	{
+		opacity:0;
+	}
+	main>div>div> ul li:nth-of-type(1)>a:hover>img{opacity:1;}
+	main>div>div>ul li:nth-of-type(2)>a:hover>img{opacity:1;}
+	main>div>div>ul li:nth-of-type(3)>a:hover>img{opacity:1;}
+	main>div>div>ul li:nth-of-type(4)>a:hover>img{opacity:1;}
+	main>div>div>ul li:nth-of-type(5)>a:hover>img{opacity:1;}
+	main>div>div>ul li:nth-of-type(6)>a:hover>img{opacity:1;}
+	main>div>div>ul li:nth-of-type(7)>a:hover>img{opacity:1;}
+	main>div>div>ul li:nth-of-type(8)>a:hover>img{opacity:1;}
+	main>div>div>ul li:nth-of-type(9)>a:hover>img{opacity:1;}
+	main>div>div>ul li:nth-of-type(10)>a:hover>img{opacity:1;}
+
+	main>div>div> ul li:nth-of-type(1)>a:hover>img:first-child{transform:scale(1.2);}
+	main>div>div>ul li:nth-of-type(2)>a:hover>img:first-child{transform:scale(1.2);}
+	main>div>div>ul li:nth-of-type(3)>a:hover>img:first-child{transform:scale(1.2);}
+	main>div>div>ul li:nth-of-type(4)>a:hover>img:first-child{transform:scale(1.2);}
+	main>div>div>ul li:nth-of-type(5)>a:hover>img:first-child{transform:scale(1.2);}
+	main>div>div>ul li:nth-of-type(6)>a:hover>img:first-child{transform:scale(1.2);}
+	main>div>div>ul li:nth-of-type(7)>a:hover>img:first-child{transform:scale(1.2);}
+	main>div>div>ul li:nth-of-type(8)>a:hover>img:first-child{transform:scale(1.2);}
+	main>div>div>ul li:nth-of-type(9)>a:hover>img:first-child{transform:scale(1.2);}
+	main>div>div>ul li:nth-of-type(10)>a:hover>img:first-child{transform:scale(1.1);}
+
+	.img1{width: 300px;height:300px;}
+	a{text-decoration: none;}
+	.img2{position: absolute;left: 100px ;top:230px;opacity: 0;}
+	
+    </style>
+    <script>
+        window.onload=function()
+        {
+            
+        }
+    </script>
+</head>
+<body>
+       	<header>
+		<div class="header-img"></div>
+		<ul>
+			<li class="active"><a href="javascript:;">音乐馆</a></li>
+			<li><a href="javascript:;">我的音乐</a></li>
+			<li><a href="javascript:;">客户端</a></li>
+			<li><a href="javascript:;">开放平台</a></li>
+			<li><a href="javascript:;">VIP</a></li>
+		</ul>
+
+		<div>
+			<a href="javascript:;"></a>
+			<span>登录</span>
+			<div>开通VIP</div>
+		</div>
+	</header> 
+
+	<div class="sub_nav">
+		<ul>
+			<li><a href="index.html">首页</a></li>
+			<li><a href="gs.html">歌手</a></li>
+			<li  class="active"><a href="xd.html">新碟</a></li>
+			<li><a href="phb.html">排行榜</a></li>
+			<li><a href="javascript">分类歌单</a></li>
+		</ul>
+	</div>
+
+	<main>
+		<div>
+		<div class="xd-2">
+			<ul>
+				<li><a href=""><img class="img1"  src="./img/xdimg/xd1.png"/><img class="img2" src="./img/play.png"/ ></a>
+			    <h3><a href="">岁月是无声的流年</a></h3>
+				<h3><a href="">不才</a></h3>
+				<span>2022-12-17</span>
+				</li>
+			</ul>
+		</div>
+		<div class="xd-3">
+			<ul>
+				<li><a href=""><img class="img1"  src="./img/xdimg/xd2.png"/><img class="img2" src="./img/play.png"/ ></a>
+			    <h3><a href="">新新世界</a></h3>
+				<h3><a href="">史宗伦</a></h3>
+				<span>2022-12-17</span>
+				</li>
+			</ul>
+		</div>
+		<div class="xd-4">
+			<ul>
+				<li><a href=""><img class="img1"  src="./img/xdimg/xd3.png"/><img class="img2" src="./img/play.png"/ ></a>
+			    <h3><a href="">半心劫</a></h3>
+				<h3><a href="">张彬彬</a></h3>
+				<span>2022-12-17</span>
+				</li>
+			</div>
+			<div class="xd-5">
+				<ul>
+					<li><a href=""><img class="img1"  src="./img/xdimg/xd4.png"/><img class="img2" src="./img/play.png"/ ></a>
+					<h3><a href="">暮镜</a></h3>
+					<h3><a href="">陆柯燃</a></h3>
+					<span>2022-12-17</span>
+					</li>
+				</div>
+				<div class="xd-6">
+					<ul>
+						<li><a href=""><img class="img1"  src="./img/xdimg/xd5.png"/><img class="img2" src="./img/play.png"/ ></a>
+						<h3><a href="">球迷故事</a></h3>
+						<h3><a href="">旅行团乐队</a></h3>
+						<span>2022-12-17</span>
+						</li>
+					</div>
+					<div class="xd-7">
+						<ul>
+							<li><a href=""><img class="img1"  src="./img/xdimg/xd6.png"/><img class="img2" src="./img/play.png"/ ></a>
+							<h3><a href="">33</a></h3>
+							<h3><a href="">任嘉伦</a></h3>
+							<span>2022-12-17</span>
+							</li>
+						</div>
+						<div class="xd-8">
+							<ul>
+								<li><a href=""><img class="img1"  src="./img/xdimg/xd7.png"/><img class="img2" src="./img/play.png"/ ></a>
+							    <h3><a href="">梦的宝藏</a></h3>
+								<h3><a href="">谭佳淇</a></h3>
+								<span>2022-12-17</span>
+								</li>
+							</div>
+							<div class="xd-9">
+								<ul>
+								<li><a href=""><img class="img1"  src="./img/xdimg/xd8.png"/><img class="img2" src="./img/play.png"/ ></a>
+								    <h3><a href="">段钗</a></h3>
+									<h3><a href="">彭于晏</a></h3>
+									<span>2022-12-17</span>
+									</li>
+								</div>
+								<div class="xd-10">
+									<ul>
+								<li><a href=""><img class="img1"  src="./img/xdimg/xd9.png"/><img class="img2" src="./img/play.png"/ ></a>
+									    <h3><a href="">爱丁堡的雨下</a></h3>
+										<h3><a href="">张彬彬</a></h3>
+										<span>2022-12-17</span>
+										</li>
+									</div>
+									<div class="xd-11">
+										<ul>
+								<li><a href=""><img class="img1"  src="./img/xdimg/xd10.png"/><img class="img2" src="./img/play.png"/ ></a>
+										    <h3><a href="">不在联络/a></h3>
+											<h3><a href="">zkaai</a></h3>
+											<span>2022-12-17</span>
+											</li>
+										</div><!--中心布局实现-->
+			</div>
+	</main>
+
+
+
+
+	<footer>
+		<div class="footer-brand">
+			<div>
+			<div class="footer-down">
+				<p>下载QQ音乐客户端</p>
+
+				<ul>
+					<li><div class="footer-icon"></div><p>PC版</p></li>
+					<li><div class="footer-icon"></div><p>Mac版</p></li>
+					<li><div class="footer-icon"></div><p>Android版</p></li>
+					<li><div class="footer-icon"></div><p>iPhone版</p></li>
+				</ul>
+			</div>
+			<div class="footer-product">
+				<p>特色产品</p>
+
+				<ul>
+					<li><div class="footer-icon"></div><p>PC版</p></li>
+					<li><div class="footer-icon"></div><p>Mac版</p></li>
+					<li><div class="footer-icon"></div><p>Android版</p></li>
+					<li><div class="footer-icon"></div><p>iPhone版</p></li>
+				</ul>
+
+				
+			</div>
+			<div class="footer-link">
+				<p>合作链接</p>
+
+				<ul>
+					<li>
+						<span>CJ&nbsp;ENM</span>
+						<span>腾讯视频</span>
+					</li>
+
+					<li>
+						<span>手机QQ空间</span>
+						<span>最新版QQ</span>
+					</li>
+
+					<li>
+						<span>腾讯社交广告</span>
+						<span>电脑管家</span>
+					</li>
+					
+					<li>
+						<span>QQ浏览器</span>
+						<span>腾讯微云</span>
+					</li>
+					
+					<li>
+						<span>腾讯云</span>
+						<span>企鹅FM</span>
+					</li>
+
+					<li>
+						<span>智能电视网</span>
+						<span>当贝市场</span>
+					</li>
+					<li>
+						<span>酷我音乐</span>
+						<span>酷狗听书</span>
+					</li>
+			</div>
+			</div>
+		</div>
+
+		<div class="footer_copyright">
+			<div>
+				<p>关于腾讯 |About Tencent |服务条款 |用户服务协议 |隐私政策 |权利声明 |广告服务 |腾讯招聘 |客服中心 |网站导航 |举报中心</p>
+				
+				<p>Copyright © 1998 - 2022 Tencent. All Rights Reserved.</p>
+
+				<p>腾讯公司 版权所有｜营业执照｜网络文化经营许可证：粤网文[2020]3396-195号｜客服电话：4006016666｜违法与不良信息举报邮箱：tme_musicjubao@tencentmusic.com</p>
+			</div>
+		</div>
+	</footer>
+
+</body>
+</html>

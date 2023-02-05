@@ -1,0 +1,151 @@
+<!DOCTYPE HTML5>
+<html>
+	<head>
+		<meta charset="utf8"/>
+		<title>lxl</title>
+		<script src="tool.js"></script>
+		<style>
+			*{margin:0;padding:0;list-style-type:none;box-sizing:border;}
+			#box
+			{
+				width:300px;
+				height:200px;
+				margin: 200px auto 0;
+				position:relative;
+				overflow:hidden;
+			}
+			.pics
+			{
+				width:1200px;
+				height:100%;
+				position:absolute;
+				left:0;
+				top:0;
+			}
+			.pics > li
+			{
+				width:300px;
+				height:100%;
+				float:left;
+				
+			}
+			.btns
+			{
+				width:100%;
+				height:100%;
+				position:absolute;
+				z-index:100;
+				left:0;
+			}
+			.btns > li
+			{
+				width:15px;
+				height:15px;
+				border-radius:50%;
+				border:1px solid black;
+				margin:50% 5%;
+				float:left;
+			}
+			.btns > li.active
+			{
+				background:black;
+			}
+			
+		</style>
+		<script>
+			window.onload=function()
+			{
+				let aBtn = document.querySelector(".btns");
+				let aPic = document.querySelector(".pics");
+				let oBox = document.getElementById("box");
+				
+				let oBox_w = parseInt(getStyle(oBox,'width'));
+				
+				aPic.innerHTML += aPic.innerHTML;
+				
+				let li_ps = document.querySelectorAll(".pics>li");
+				let li_bs = document.querySelectorAll(".btns>li");
+				aPic.style.width = li_ps.length * oBox_w + "px";
+				
+				let currPic = 0;
+
+				for(let i = 0; i < li_bs.length; i++)
+				{
+					li_bs[i].onclick=function()
+					{
+						currPic = i;
+						move(aPic,currPic);
+					}
+				}
+			
+				let timer = null;
+
+				timer = setInterval(function()
+				{
+
+					currPic++;
+					if(currPic >=  5)
+					{
+						currPic = 1;
+						aPic.style.left = 0;
+					}
+
+					move(aPic,currPic);
+
+
+				},3000);
+
+				function addLi(t)
+				{
+					
+
+					for(let i = 0; i < li_bs.length; i++)
+					{
+
+						li_bs[i].classList.remove("active");
+					}
+					if(t > 3)
+					t = 0;
+					
+					li_bs[t].classList.add("active");
+					
+				}
+
+
+				function move(obj, t)
+				{
+					//调用函数移动obj，t为当前需要移动到的张数
+					//0<= t <= 4
+					let v = oBox_w * t;
+					
+					addLi(t);
+
+					MyStartMove(obj, 'left', -v);
+
+				}
+
+
+
+
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div id="box">
+			<ul class="pics">
+				<li style="background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);"></li>
+				<li style="background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);"></li>
+				<li style="background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);"></li>
+				<li style="background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);"></li>
+			</ul>
+			<ul class="btns">
+				<li class="active"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</body>
+</html>
+

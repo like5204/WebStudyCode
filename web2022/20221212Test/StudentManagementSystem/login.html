@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="css/model.css">
+    <style>
+    	main
+	{
+		display:grid;
+		place-items:center;
+	}
+    	#boxLogin
+	{
+		width:40%;
+		height:520px;	
+		border:1px solid black;
+		border-radius:15px;
+		box-shadow:0 0 7px 1px #c5c5c5;
+	}
+	#boxLogin>form{width:100%;height:100%;}
+	.log-t
+	{
+		height:25%;
+		display:flex;
+		align-items:flex-end;
+	}
+	.log-t a
+	{
+		display:block;
+		height:30px;
+		line-height:30px;
+		width:26%;
+		text-align:center;
+		background:#54aff9;
+		color:white;
+		box-shadow:0 0 5px 0px #969696;
+	}
+	.log-t a:first-child{border-radius:0 10px 0 0;}
+	.log-t a:last-child{border-radius:10px 0 0 0px;}
+	.log-t div
+	{
+		width:48%;
+		height:100%;
+		display:grid;
+		place-items:center;
+	}
+	.log-t img
+	{
+		width:100px;
+		height:100px;
+	}
+	.log-c
+	{
+		height:65%;
+	}
+	.log-c ul
+	{
+		width:60%;
+		height:100%;
+		margin:0 auto 0;
+		display:flex;
+		flex-direction:column;
+	}
+	.log-c ul li
+	{
+		width:100%;
+		margin-top:50px;
+		height:30px;
+		position:relative;
+	}
+	.log-c ul li:last-child
+	{
+		margin-top:20px;
+		display:flex;
+		justify-content:space-between;
+		color:black;
+		font-size:13px;
+	}
+	.log-c input:not([type="checkbox"])/*text password submit*/
+	{
+		width:100%;
+		height:100%;
+		outline:0;
+		text-indent:10px;
+		font-size:16px;
+		border-radius:20px;
+		background-color:#ebebeb;
+		border:1px solid rgb(148, 148, 148);
+	}
+	.log-c input[type=submit]{background-color:#54aff9;color:#ccc}
+	.log-c input:not([type=submit]){opacity:0.5;}
+	.log-c input:not([type=submit]):focus + span,.log-c input:not([type=submit]):valid + span
+	{
+		top:-26px;
+		left:0;
+		color:blue;
+		transform:scale(0.8);
+		font-weight:bold;
+	}
+	.log-c input:not([type=submit]):focus,.log-c input:not([type=submit]):valid
+	{
+		opacity:1;
+		border:#399AF2;
+		border-radius:5px;
+		transition-duration:0.5s;
+	}
+	.log-c li span
+	{
+		display:block;
+		height:30px;
+		line-height:30px;
+		top:0;
+		left:10px;
+		color:#B6B6B6;
+		position:absolute;
+		transition:all 0.3s;
+		pointer-events:none;
+	}
+	.log-b
+	{
+		height:10%;	
+	}
+    </style>
+    <script>
+        window.onload=function()
+        {
+            
+        }
+    </script>
+</head>
+<body>
+       <article>
+       		<header>
+			<h2>学生信息管理系统</h2>
+		</header>
+		<main>
+			<div id="boxLogin">
+				<form method="post" url=".">
+				<div class="log-t">
+					<a href="javascript:;">首页</a>
+					<div><img src="img/student_1.png"/></div>
+					<a href="javascript:;">注册</a>
+				</div>
+				<div class="log-c">
+					<ul>
+						<li><input type="text" required/><span>学号</span></li>
+						<li><input type="password" required/><span>密码</span></li>
+						<li><input type="submit" value="提交"/></li>
+						<li><div><input type="checkbox" id="r1"/><label for="r1">记住我</label></div><a href="javascript:;">忘记密码</a></li>
+					</ul>
+				</div>
+				<div class="log-b"></div>
+				</form>
+			</div>
+		</main>
+		<footer>
+			<h4>这是一个学生信息管理系统</h4>
+			<h5>
+				<a href="https://beian.miit.gov.cn/" target="_blank">渝ICP备20221212037号</a>
+				
+				<img src="img/备案图标.png" alt="">
+
+				<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=50011502000">渝公网安备 50011502000号</a>
+			
+			</h5>
+		</footer>
+	</article>
+</body>
+</html>

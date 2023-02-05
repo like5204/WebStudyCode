@@ -1,0 +1,80 @@
+<!DOCTYPE HTML5>
+<html>
+	<head>
+		<meta charset="utf8"/>
+		<title>lxl</title>
+		<script src="tool.js"></script>
+		<style>
+		*{margin:0;padding:0;list-style-type:none;box-sizing:border-box;}
+		article
+		{
+			width:300px;
+			height:300px;
+			margin:100px auto 0;
+		}
+		#box
+		{
+			width:300px;
+			height:0;
+			background:#eee;
+			opacity:0;
+		}
+		button
+		{
+			width:50px;
+			height:30px;
+			
+		}
+		#box>p
+		{
+			width:100%;
+			height:20%;
+			text-align:center;
+		}
+		#box>table
+		{
+			width:100%;
+			height:75%;
+
+		}
+		</style>
+		<script>
+			window.onload=function()
+			{
+				
+				let oBox = document.getElementById("box");
+
+				let oBtn = document.getElementsByTagName("button")[0];
+				
+				let x = false;
+				oBtn.onclick=function()
+				{
+					if(x)
+					{
+						startMove_json(oBox,{'height':0,'opacity':0},8)
+					}
+					else
+					{
+						startMove_json(oBox,{'height':200,'opacity':100},8)
+					}
+					x=!x;
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<article>
+		<button>Click me</button>
+		<div id="box">
+			<p>俺的购物车</p>
+			<table>
+				<tr><td>123</td><td>abc</td></tr>
+				<td><td>456</td><td>def</td></tr>
+			</table>
+
+		</div>
+		</article>
+	</body>
+</html>
+

@@ -1,0 +1,88 @@
+#threemain {
+	height: 360px;
+	width: 1300px;
+	margin: auto;
+	background: linear-gradient(#f2f2f2, #fafafa);
+	position: relative;
+	overflow: hidden;
+}
+
+#threemain #title {
+	position: relative;
+	top: 25px;
+	height: 70px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 70px;
+	color: #333333;
+}
+
+#threemain #title span {
+	margin-left: 10px;
+}
+
+#threelun {
+	height: 250px;
+	width: 1040px;
+	margin: auto;
+}
+
+#threelun img {
+	margin-top: 30px;
+	width: 510px;
+}
+
+#threelun img:last-child {
+	float: right;
+}
+
+#threemain #navdian {
+	text-align: center;
+}
+
+#threemain #navdian a {
+	height: 50px;
+	margin: 10px;
+
+
+}
+
+#threemain #navdian a:hover span {
+	background-color: #afafaf;
+}
+
+#threemain #navdian a span {
+	list-style: none;
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background-color: #e1e1e1;
+	border-radius: 50%;
+	margin: 20px 0px;
+	margin-top: 18px;
+
+}
+
+#threemain #navdian a:nth-of-type(1) span {
+	background-color: #afafaf;
+}
+
+#left3 {
+	position: absolute;
+	z-index: 1;
+	top: 150px;
+	left: -122px;
+	width: 80px;
+	height: 100px;
+}
+
+#right3 {
+	position: absolute;
+	right: 0px;
+	top: 150px;
+	z-index: 1;
+	width: 80px;
+	left: 1340px;
+	height: 100px;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE HTML5>
+<html>
+	<head>
+		<meta charset="utf8"/>
+		<title>lxl</title>
+		<style>
+			*{margin:0;padding:0;list-style-type:none;}
+			#box
+			{ margin:50px auto 0; width:200px;
+				height:100px;
+				border:1px solid black;
+				position:relative;
+
+				overflow:hidden;
+			}
+			#box > ul
+			{
+				width:800px;
+				height:100%;
+				position:absolute;
+				left:0;
+			}
+			#box > ul > li
+			{
+				width:200px;
+				height:100%;
+				float:left;
+			}
+		</style>
+		<script>
+			window.onload=function()
+			{
+
+				
+				function MyStartMove(obj, str, Itaget)
+        			{
+            				clearInterval(obj.timer);
+
+            				obj.timer = setInterval(function()
+            				{
+                				let curr = parseInt(getStyle(obj, str));//获取对象当前属性值
+                				let speed = (Itaget - curr)/6;//根据目标和当前值, 计算速度==>匀速
+
+               					 speed = speed>0?Math.ceil(speed):Math.floor(speed);//速度取整
+
+                				if(Itaget == curr)
+                				{
+                    					clearInterval(obj.timer);
+                				}
+                				else
+                				{
+                    					obj.style[str] = curr + speed + 'px';
+               					 }
+          				  },30);
+       				 }
+
+
+
+	
+		function getStyle(obj, name)
+		{
+			if(obj.currentStyle) return obj.currentStyle[name];
+			else return getComputedStyle(obj,'')[name];
+		 	//返回xxx 属性值, 可能包含字符
+		}
+				
+
+				let timer = null;
+
+
+				let oUl = document.querySelector("#box>ul");
+				let oBox = document.getElementById("box");
+				const oBoxWidth = parseInt(getStyle(oBox,'width'));
+				oUl.innerHTML = oUl.innerHTML + oUl.innerHTML;
+				let numLi = document.querySelectorAll('#box>ul>li').length;
+				
+				oUl.style.width = numLi * oBoxWidth + "px";
+
+
+				timer = setInterval(function()
+				{
+					let oUlLeft = parseInt(getStyle(oUl,'left'));
+					
+					let v = 0;
+
+					if(oUlLeft <  (-3*oBoxWidth))
+					{
+						oUl.style.left = 0;
+					}
+					else
+					{
+						MyStartMove(oUl,'left',oUlLeft-200);
+					}
+
+
+				},3000)
+
+
+
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div id="box">
+			<ul>
+				<li style="background-color:red;"></li>
+				<li style="background-color:blue;"></li>
+				<li style="background-color:yellow;"></li>
+				<li style="background-color:green;"></li>
+			</ul>
+		</div>
+	</body>
+</html>
+

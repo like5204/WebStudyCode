@@ -1,0 +1,37 @@
+<!DOCTYPE HTML5>
+<html>
+	<head>
+		<meta charset="utf8"/>
+		<title>lxl</title>
+		<style>
+			*{margin:0;padding:0;list-style-type:none;}
+			#showImg{width:400px;height:600px;}
+			#showImg>img{width:100%;height:100%;}
+		</style>
+		<script>
+			window.onload=function()
+			{
+				let pic = document.querySelector("#showImg>img");
+				let aList = document.querySelectorAll("a");
+				
+				aList[0].onclick=function()
+				{
+					pic.src = "img/onImg.png";
+				}
+				aList[1].onclick=function()
+				{
+					pic.src ="img/offImg.png";
+				}
+
+			}
+		</script>
+	</head>
+	<body>
+			<div id="showImg"><img src="img/onImg.png"/ ></div> 
+			<div id="btn">
+			<a href="javascript:void(0);">开机</a>
+			<a href="javascript:void(0);">关机</a>
+			</div>
+	</body>
+</html>
+

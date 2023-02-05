@@ -1,0 +1,632 @@
+<!DOCTYPE HTML5>
+<html>
+	<head>
+		<meta charset="utf8"/>
+		<title>lxl</title>
+		<script src="js/jquery-3.6.1.min.js"></script>
+		<style>
+			*{margin:0;padding:0;box-sizing:border-box;list-style-type:none;}
+
+			#box
+			{
+				width:90%;
+				min-height:1400px;
+				height:auto;
+				margin:100px auto 0;
+				border:1px solid black;
+			}
+			#showImg
+			{
+				width:100%;
+				height:550px;
+				display:flex;
+
+			}
+			
+			.left
+			{
+				width:35%;
+				height:100%;
+				border-bottom:1px solid black;
+			}
+			.center
+			{
+				width:45%;
+				height:100%;
+				padding:0 10px;
+				border-right:1px solid black;
+			}
+			.right
+			{
+				width:20%;
+				height:100%;
+			
+				padding:10px 10px 0px 10px;
+			}
+			#comment
+			{
+				width:100%;
+				min-height:450px;
+				border-top:1px solid black;
+				padding-top:20px;
+			}
+			#small
+			{
+				width:100%;
+				height:80%;
+				border-radius:12px;
+				background:url("img/1.jpg") no-repeat center center/cover;
+				position:relative;
+				z-index:1;
+			}
+			#sliper
+			{
+				width:100px;
+				height:100px;
+				position:absolute;
+				z-index:2;
+			}
+			.pics
+			{
+				width:100%;
+				height:20%;
+			}
+			.pics > ul
+			{
+				width:100%;
+				height:100%;
+				display:flex;
+				align-items:center;
+			}
+			.pics > ul > li
+			{
+				width:20%;
+				height:80%;
+				margin-left:10px;
+				border-radius:6px;
+				background-repeat:no-repeat;
+				background-position:center;
+				background-size:cover;
+			}
+			.pics>ul>li:first-child{margin-left:0;}
+
+			.pics>ul>li:nth-of-type(1){background-image:url("img/1.jpg");}
+			.pics>ul>li:nth-of-type(2){background-image:url("img/2.jpg");}
+			.pics>ul>li:nth-of-type(3){background-image:url("img/3.jpg");}
+			.pics>ul>li:nth-of-type(4){background-image:url("img/4.jpg");}
+
+
+			.center > p:first-child
+			{
+				text-indent:1.4em;
+				height:45px;
+				font-size:1.2em;
+				line-height:45px;
+				font-weight:bold;
+			}
+			.price
+			{
+				width:100%;
+				padding:10px;
+				background:#ccc;
+				height:60px;
+				border-left:5px solid #bbb;
+			}
+			.price>p>span{color:red;font-weight:bold;}
+			.purNum
+			{
+				width:100%;
+				height:30px;
+				line-height:30px;
+				font-size:12px;
+				color:#8a8280;
+			}
+			.purNum>i
+			{
+				font-size:10px;
+			}
+			.purNum > button
+			{
+				width:30px;
+			}
+			.center>p:last-child
+			{
+				height:40px;
+			}
+			.center>p:last-child > button
+			{
+				width:80px;
+				height:30px;
+				border:1px solid #fff;
+				color:white;
+			}
+			.btn1
+			{
+				background:#ff9a9e;
+			}
+			.btn2
+			{
+				margin-left:15px;
+				background:#a18cd1;
+			}
+			.rem
+			{
+				width:100%;
+				height:30px;
+				text-align:center;
+				color:#8a8280;
+				display:flex;
+				align-items:center;
+				justify-content:center;
+			}
+			.rem:before,.rem:after
+			{
+				content:"";
+				display:block;
+				width:30%;
+				border:1px solid #eee;
+			}
+			#moveBox
+			{
+				margin-top:8px;
+				width:100%;
+				height:470px;
+				padding:10px;
+				padding-top:20px;
+				position:relative;
+				border:1px solid black;
+			}
+			#moveBox > ul
+			{
+				width:100%;
+				height:470px;
+				position:absolute;
+			}
+			#moveBox > ul > li
+			{
+				margin-left:7%;
+				width:80%;
+				height:30%;
+				outline:1px solid black;
+			}
+			#moveBox > ul > li > img{width:100%;height:100%;}
+
+			.right > p:last-child
+			{
+				width:100%;
+				height:32px;
+				text-align:center;
+				border:1px solid black;
+				display:flex;
+				justify-content:center;
+			}
+			.right > p:last-child > a
+			{
+				display:block;
+				width:15%;
+				height:100%;
+				background:url("img/top.png") no-repeat center/cover;
+			}
+			.right > p:last-child > a:last-child{margin-left:15px;transform:rotate(0.5turn);}
+			.bts
+			{
+				width:15%;
+				height:100%;
+				padding:20px;
+				border:1px solid black;
+				float:left;
+			}
+			.bts>ul
+			{
+				width:100%;
+				height:auto;
+			}
+			.bts>ul>li{width:100%;}
+			.bts > ul > li > a
+			{
+				display:block;
+				width:100%;
+				height:23px;
+				text-indent:1.3em;
+				background:url("img/add.png") no-repeat left  center/20px; 
+			}
+			.bts > ul > li > a.active
+			{
+				background:url("img/minus.png") no-repeat left  center/20px; 
+				
+			}
+
+			.bts>ul>li>ul
+			{
+				height:auto;
+				margin-left:20px;
+				display:none;
+			}
+			.options
+			{
+				width:80%;
+				height:auto;
+				float:left;
+				margin-left:40px;
+			}
+			.opt-content
+			{
+				width:100%;
+				min-height:360px;
+				padding:15px 0px;
+			}		
+			.goodsDetail
+			{
+				width:100%;
+				height:auto;
+				display:none;
+			}
+			.goodsDetail > table
+			{
+				width:100%;
+				border-collapse:collapse;
+				color:#4e4e4e;
+			}
+			.goodsDetail > table tr
+			{
+				height:35px;
+			}	
+			.goodsDetail  div
+			{
+				width:100%;
+				height:500px;
+				margin-top:30px;
+				background:url("img/goodsDtl.png") no-repeat center/cover;
+			}
+			.goodsComment
+			{
+				width:100%;
+				height:auto;
+			}
+			.goodsComment .comments
+			{
+				width:100%;
+				height:auto;
+			}
+			.comments > ul
+			{
+				width:100%;
+				height:auto;
+			}
+			.comments > ul > li
+			{
+				width:100%;
+				height:auto;
+				padding:20px;
+				border:1px solid #f1f1f1;
+				margin-top:15px;
+			}
+			.comments>ul>li:first-child{margin:0;}
+			.stars
+			{
+				width:100%;
+				height:20px;
+			}
+			.stars>li
+			{
+				width:2%;
+				height:20px;
+				margin-left:5px;
+				float:left;
+				background:url("img/star.png") no-repeat left center/20px;
+			}
+			.stars>li:first-child{margin-left:0;}
+			.stars ~ p{color:#7a7a7a;margin-top:5px;}/*选中两个p标签*/
+			.stars + p + p
+			{
+				/*选中的是匿名p标签*/
+				text-align:right;
+				font-size:13px;
+			}
+			.stars ~ button
+			{
+				width:70px;
+				height:25px;
+
+			}
+			.goodsComment .editComment
+			{
+				width:100%;
+				border:1px solid #dedede;
+				padding:10px 20px;
+			}
+			
+			.editComment>div:first-child>p
+			{
+				width:auto;
+				color:#737b78;
+				float:left
+			}
+			.editComment .stars
+			{
+				margin-left:5px;
+				height:22px;
+				width:90%;
+				float:left;
+			}
+			.editComment .stars li
+			{
+				height:22px;
+				width:2.5%;
+				background-size:22px;
+			}
+			.editComment > *
+			{
+				margin-top:15px;
+			}
+			.editComment > button
+			{
+				width:80px;
+				height:30px;
+				background:#c84520;
+				color:white;
+				border:1px solid black ;
+			}	
+			.editComment > button:hover
+			{
+				border:1px solid #93afec;
+			}
+			.opt
+			{
+				width:100%;
+				height:64px;
+				border:1px solid #fdfdfd;
+			}
+			.opt>div
+			{
+				width:15%;
+				height:100%;
+				float:left;
+				display:flex;
+				align-items:center;
+				justify-content:center;
+				color:#a4a4a4;
+			}
+			.opt > div:first-child
+			{
+				background:#f5f5f5;
+			}
+			.opt > div:last-child
+			{
+				background:#f5f5f5;
+			}
+			.opt > div.active
+			{
+				background:white;
+				border:1px solid #fdfdfd;
+				border-top:3px solid red;
+			}
+		</style>
+		<script>
+			window.onload=function()
+			{
+				
+				let btns = $(".bts>ul>li>a");
+				let oUl = $(".bts>ul>li>ul");
+				Array(btns).map(item=>item.x=!1);
+				for(let i = 0; i < btns.length; i++)
+				{
+					$(btns[i]).click(function()
+					{
+
+
+						for(let j = 0; j < btns.length; j++)
+						{
+							if(btns[j].x && j != i)btns[j].click();
+						}
+						if(!this.x)
+						{
+							$(this).addClass("active");
+							$(oUl[i]).show();
+						}
+						else
+						{
+							$(this).removeClass("active");
+							$(oUl[i]).hide();
+						}
+						this.x=!this.x;
+					})
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<div id="showImg">
+				<div class="left">
+					<div id="small">
+						<div id="sliper"></div>
+					</div>
+
+					<div class="pics">
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="center">
+					<p>李宁板鞋男鞋天迹官方旗舰2022新款潮流</p>
+
+					<div class="price">
+						<p>市场价: <del>$300</del></p>
+						<p>价格:<span>$198</span></p>
+					</div>
+
+					<p class="purNum">购买数量: <button>-</button> <button>1</button> <button>+</button> <i>(当前库存16)</i></p>
+
+					<p>
+						<button class="btn1">立即购买</button>
+						<button class="btn2">加入购物车</button>
+					</P>
+	
+				</div>
+	
+
+
+				<div class="right">
+					<p class="rem"><span>相关推荐</span></p>
+					
+
+
+					<div id="moveBox">
+						<ul>
+							<li><img src="img/images/1.png"/></li>
+							<li><img src="img/images/2.png"/></li>
+							<li><img src="img/images/3.png"/></li>
+						</ul>
+					</div>
+
+					<p><a href="#"></a><a href="#"></a></p>
+				</div>
+			</div>
+
+		<div id="comment">
+
+				<div class="bts">
+					<ul>
+						<li>
+							<a href="javascript:;"><span>香水品牌</span></a>
+							<ul>
+								<li>香奈儿</li>
+								<li>兰蔻</li>
+								<li>雅诗兰黛</li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="javascript:;"><span>香水分类</span></a>
+							<ul>
+								<li>123</li>
+								<li>456</li>
+								<li>789</li>
+							</ul>
+						<li>
+						<li>
+							<a href="javascript:;"><span>香水分类</span></a>
+							<ul>
+								<li>123</li>
+								<li>456</li>
+								<li>789</li>
+							</ul>
+						<li>
+						<li>
+							<a href="javascript:;"><span>香水分类</span></a>
+							<ul>
+								<li>123</li>
+								<li>456</li>
+								<li>789</li>
+							</ul>
+						<li>
+					</ul>
+				</div>
+				<div class="options">
+					<div class="opt">
+						<div class="">商品详情</div>
+						<div class="active">商品评论</div>
+					</div>
+					<div class="opt-content">
+						<div class="goodsDetail">
+							<table border="0">
+								<tr>
+									<td>品牌: Lining/李宁</td>
+									<td>品名: 天迹</td>
+									<td>功能: 回弹&nbsp;减震</td>
+								</tr>
+								<tr>
+									<td>闭合方式:系带</td>
+									<td>鞋码: 39&nbsp;39.5&nbsp;40&nbsp;41&nbsp;42&nbsp;</td>
+									<td>颜色分类: 云雾白/粉绿&nbsp;云雾白/茶红</td>
+								</tr>
+								<tr>
+									<td>吊牌价:399</td>
+									<td>是否瑕疵:否</td>
+									<td>上市时间:2022年冬季</td>
+								</tr>
+								<tr>
+									<td>鞋帮高度:低帮(帮高小余10cm)</td>
+									<td>鞋底材质:橡胶</td>
+									<td>性别:男子</td>
+								</tr>
+								<tr>
+									<td>款式:板鞋</td>
+									<td>帮面材质:合成革+纺织品</td>
+									<td>是否商场同款</td>
+								</tr>
+								<tr>
+									<td colspan="3">销售渠道类型:商场同款(线上or线下)</td>
+								</tr>
+							</table>
+									
+
+							<div></div>
+						</div>
+						<div class="goodsComment">
+							<div class="comments">
+								<ul>
+									<li>
+										<ul class="stars">
+											<li style="background-image:url('img/star-fill.png')"></li>
+											<li style="background-image:url('img/star-fill.png')"></li>
+											<li style="background-image:url('img/star-fill.png')"></li>
+											<li style="background-image:url('img/star-fill.png')"></li>
+											<li></li>
+										</ul>
+
+							<p>有一说一，款式真的是非常喜欢呀，不过买回来到现在还没有试，反正看着就很中意，冲就完事啦</p>
+										<p>----匿名</p>
+										<button>删除</button>
+						
+									</li>
+
+
+
+
+									
+									<li>
+										<ul class="stars">
+											<li style="background-image:url('img/star-fill.png')"></li>
+											<li style="background-image:url('img/star-fill.png')"></li>
+											<li></li>
+											<li></li>
+											<li></li>
+										</ul>
+
+							<p>有一说一，款式真的是非常喜欢呀，不过买回来到现在还没有试，反正看着就很中意，冲就完事啦</p>
+										<p>----匿名</p>
+										<button>删除</button>
+						
+									</li>
+								</ul>
+							</div>
+							<div class="editComment">
+									<div>
+										<p>总体评价:</p>
+										<ul class="stars">
+											<li></li>
+											<li></li>
+											<li></li>
+											<li></li>
+											<li></li>
+										</ul>
+									</div>
+									<textarea rows="7" cols="60"></textarea>
+									<br/><button>发表评论</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+

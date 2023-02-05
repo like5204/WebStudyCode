@@ -1,0 +1,565 @@
+.mlist-recomm
+{
+	width:100%;
+	height:500px;
+}
+main > div > h1{letter-spacing:15px;text-align:center;}
+
+.mlist-text-tag
+{
+	width:50%;
+	height:80px;
+	margin:0 auto 0;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.mlist-text-tag li
+{
+	width:16.6%;
+	text-align:center;
+	cursor:pointer;
+}
+.mlist-text-tag li.active
+{
+	color:var(--qq-green);
+	
+}
+.mlist-text-tag li:hover
+{
+	color:var(--qq-green);
+}
+
+.mlist-move
+{
+	width:100%;
+	height:237px;
+	margin:0 auto 0;
+	overflow:hidden;
+	position:relative;
+}
+.mlist-move>ul
+{
+	width:500%;
+	height:100%;
+	position:absolute;
+}
+
+.mlist-move>ul>li
+{	
+	width:20%;
+	height:100%;
+	float:left;
+}
+
+.mlist-move-item
+{
+	width:90%;
+	margin:0 auto 0;
+	display:flex;
+	justify-content:space-between;
+}
+.mlist-move-item>li
+{
+	width:178px;
+	height:237px;
+}
+.mlist-li-img
+{
+	width:178px;
+	height:178px;
+	position:relative;
+	z-index:105;
+}
+.mlist-li-img>div
+{
+	width:178px;
+	height:178px;
+	position:absolute;
+	left:0;
+	top:0;
+	transition:all ease .5s;
+}
+.show-Img,.show-img
+{
+	opacity:0.7;
+	z-index:101;
+}
+.show-icon
+{
+	z-index:102;
+	opacity:0;
+	background:url(../img/play.png) no-repeat scroll center/50px;
+}
+
+.mlist-li-img:hover>.show-Img{opacity:1;}
+.mlist-li-img:hover>.show-icon{opacity:1;}
+.song-list-left:hover>.show-img{opacity:1;}
+.song-list-left:hover>.show-icon{opacity:1;}
+
+
+
+
+.mlist-li-img:hover>.mlist1{background-size:200px;}
+.mlist-li-img:hover>.mlist2{background-size:200px;}
+.mlist-li-img:hover>.mlist3{background-size:200px;}
+.mlist-li-img:hover>.mlist4{background-size:200px;}
+.mlist-li-img:hover>.mlist5{background-size:200px;}
+.mlist-li-img:hover>.mlist6{background-size:200px;}
+.mlist-li-img:hover>.mlist7{background-size:200px;}
+.mlist-li-img:hover>.mlist8{background-size:200px;}
+.mlist-li-img:hover>.mlist9{background-size:200px;}
+.mlist-li-img:hover>.mlist10{background-size:200px;}
+.mlist-li-img:hover>.mlist11{background-size:200px;}
+.mlist-li-img:hover>.mlist12{background-size:200px;}
+.mlist-li-img:hover>.mlist13{background-size:200px;}
+.mlist-li-img:hover>.mlist14{background-size:200px;}
+.mlist-li-img:hover>.mlist15{background-size:200px;}
+.mlist-li-img:hover>.mlist16{background-size:200px;}
+.mlist-li-img:hover>.mlist17{background-size:200px;}
+.mlist-li-img:hover>.mlist18{background-size:200px;}
+.mlist-li-img:hover>.mlist19{background-size:200px;}
+.mlist-li-img:hover>.mlist20{background-size:200px;}
+.mlist-li-img:hover>.mlist21{background-size:200px;}
+.mlist-li-img:hover>.mlist22{background-size:200px;}
+.mlist-li-img:hover>.mlist23{background-size:200px;}
+.mlist-li-img:hover>.mlist24{background-size:200px;}
+.mlist-li-img:hover>.mlist25{background-size:200px;}
+
+.mlist1{background:url(../img/mlistImg/mlist-1.jpg) no-repeat scroll center/178px;}
+.mlist2{background:url(../img/mlistImg/mlist-2.jpg) no-repeat scroll center/178px;}
+.mlist3{background:url(../img/mlistImg/mlist-3.jpg) no-repeat scroll center/178px;}
+.mlist4{background:url(../img/mlistImg/mlist-4.jpg) no-repeat scroll center/178px;}
+.mlist5{background:url(../img/mlistImg/mlist-5.jpg) no-repeat scroll center/178px;}
+.mlist6{background:url(../img/mlistImg/mlist-6.jpg) no-repeat scroll center/178px;}
+.mlist7{background:url(../img/mlistImg/mlist-7.jpg) no-repeat scroll center/178px;}
+.mlist8{background:url(../img/mlistImg/mlist-8.jpg) no-repeat scroll center/178px;}
+.mlist9{background:url(../img/mlistImg/mlist-9.jpg) no-repeat scroll center/178px;}
+.mlist10{background:url(../img/mlistImg/mlist-10.jpg) no-repeat scroll center/178px;}
+.mlist11{background:url(../img/mlistImg/mlist-11.jpg) no-repeat scroll center/178px;}
+.mlist12{background:url(../img/mlistImg/mlist-12.jpg) no-repeat scroll center/178px;}
+.mlist13{background:url(../img/mlistImg/mlist-13.jpg) no-repeat scroll center/178px;}
+.mlist14{background:url(../img/mlistImg/mlist-14.jpg) no-repeat scroll center/178px;}
+.mlist15{background:url(../img/mlistImg/mlist-15.jpg) no-repeat scroll center/178px;}
+.mlist16{background:url(../img/mlistImg/mlist-16.jpg) no-repeat scroll center/178px;}
+.mlist17{background:url(../img/mlistImg/mlist-17.jpg) no-repeat scroll center/178px;}
+.mlist18{background:url(../img/mlistImg/mlist-18.jpg) no-repeat scroll center/178px;}
+.mlist19{background:url(../img/mlistImg/mlist-19.jpg) no-repeat scroll center/178px;}
+.mlist20{background:url(../img/mlistImg/mlist-20.jpg) no-repeat scroll center/178px;}
+.mlist21{background:url(../img/mlistImg/mlist-21.jpg) no-repeat scroll center/178px;}
+.mlist22{background:url(../img/mlistImg/mlist-22.jpg) no-repeat scroll center/178px;}
+.mlist23{background:url(../img/mlistImg/mlist-23.jpg) no-repeat scroll center/178px;}
+.mlist24{background:url(../img/mlistImg/mlist-24.jpg) no-repeat scroll center/178px;}
+.mlist25{background:url(../img/mlistImg/mlist-25.jpg) no-repeat scroll center/178px;}
+
+
+.mlist-li-img+div
+{
+	font-size:14px;
+}
+.mlist-li-img+div+p
+{
+	font-size:12px;
+	color:#999;
+}
+
+.marker
+{
+	width:50%;
+	height:100%;
+	position:absolute;
+	z-index:104;
+	display:flex;
+	align-items:center;
+	transition:all ease .5s;
+}
+
+.mlist-marker-left
+{
+	left:-79px;
+
+}
+.mlist-marker-right
+{
+	right:-79px;
+	transform:rotate(180deg);
+}
+.marker> a
+{
+	display:block;
+	width:79px;
+	height:108px;
+	background:rgba(0,0,0,0.1) url(../img/left.png) no-repeat scroll center/30px;
+}
+.mlist-move:hover .mlist-marker-left{left:0;}
+.mlist-move:hover .mlist-marker-right{right:0;}
+
+.mod_index-song-content:hover .mlist-marker-left{left:0;}
+.mod_index-song-content:hover .mlist-marker-right{right:0;}
+
+.slide-box-section:hover .mlist-marker-left{left:0;}
+.slide-box-section:hover .mlist-marker-right{right:0;}
+
+.mode_slide_switch
+{
+	width:20%;
+	margin:0 auto 0;
+	height:80px;
+	display:flex;
+	justify-content:space-around;
+	align-items:center;
+}
+.mode_slide_switch>a
+{
+	width:10px;
+	height:10px;
+	border-radius:12px;
+	border:1px solid black;
+}
+.mode_slide_switch>a:hover
+{
+	background:#eee;
+}
+.mode_slide_switch>a.active
+{
+	background:#ccc;
+}
+
+.mod_index--song
+{
+	width:100%;
+	height:552px;
+}
+
+.mod_index-song-content
+{
+	width:100%;
+	height:333px;
+	position:relative;
+	overflow:hidden;
+}
+.side_list
+{
+	width:300%;
+	height:100%;
+	position:absolute;
+	left:0;
+}
+
+.debutlist_list
+{
+	width:33.33%;
+	height:100%;
+	display:flex;
+	justify-content:center;
+	float:left;
+}
+.debutlist_list>ul
+{
+	width:90%;
+	height:100%;
+}
+.debutlist_list>ul>li
+{
+	width:33.33%;
+	height:111px;
+	float:left;
+	display:flex;
+	justify-content:space-around;
+	align-items:center;
+}
+.song-list-right
+{
+	margin-right:10px;
+	font-size:14px;
+}
+.song-list-right>div
+{
+	color:#999;
+	font-size:12px;
+}
+.song-list-left
+{
+	width:86px;
+	height:86px;
+	position:relative;
+	z-index:105;
+}
+
+.song1{background:url(../img/side/side-1.jpg) no-repeat scroll center/86px;}
+.song2{background:url(../img/side/side-2.jpg) no-repeat scroll center/86px;}
+.song3{background:url(../img/side/side-3.jpg) no-repeat scroll center/86px;}
+.song4{background:url(../img/side/side-4.jpg) no-repeat scroll center/86px;}
+.song5{background:url(../img/side/side-5.jpg) no-repeat scroll center/86px;}
+.song6{background:url(../img/side/side-6.jpg) no-repeat scroll center/86px;}
+.song7{background:url(../img/side/side-7.jpg) no-repeat scroll center/86px;}
+.song8{background:url(../img/side/side-8.jpg) no-repeat scroll center/86px;}
+.song9{background:url(../img/side/side-9.jpg) no-repeat scroll center/86px;}
+.song10{background:url(../img/side/side-10.jpg) no-repeat scroll center/86px;}
+.song11{background:url(../img/side/side-11.jpg) no-repeat scroll center/86px;}
+.song12{background:url(../img/side/side-12.jpg) no-repeat scroll center/86px;}
+.song13{background:url(../img/side/side-13.jpg) no-repeat scroll center/86px;}
+.song14{background:url(../img/side/side-14.jpg) no-repeat scroll center/86px;}
+.song15{background:url(../img/side/side-15.jpg) no-repeat scroll center/86px;}
+.song16{background:url(../img/side/side-16.jpg) no-repeat scroll center/86px;}
+.song17{background:url(../img/side/side-17.jpg) no-repeat scroll center/86px;}
+.song18{background:url(../img/side/side-18.jpg) no-repeat scroll center/86px;}
+.song19{background:url(../img/side/side-19.jpg) no-repeat scroll center/86px;}
+.song20{background:url(../img/side/side-20.jpg) no-repeat scroll center/86px;}
+.song21{background:url(../img/side/side-21.jpg) no-repeat scroll center/86px;}
+.song22{background:url(../img/side/side-22.jpg) no-repeat scroll center/86px;}
+.song23{background:url(../img/side/side-23.jpg) no-repeat scroll center/86px;}
+.song24{background:url(../img/side/side-24.jpg) no-repeat scroll center/86px;}
+.song25{background:url(../img/side/side-25.jpg) no-repeat scroll center/86px;}
+.song26{background:url(../img/side/side-26.jpg) no-repeat scroll center/86px;}
+.song27{background:url(../img/side/side-27.jpg) no-repeat scroll center/86px;}
+
+.song-list-left>div
+{
+	width:86px;
+	height:86px;
+	position:absolute;
+	left:0;
+	top:0;
+	transition:all ease .5s;
+}
+
+.song-list-left:hover>.song1{background-size:100px;}
+.song-list-left:hover>.song2{background-size:100px;}
+.song-list-left:hover>.song3{background-size:100px;}
+.song-list-left:hover>.song4{background-size:100px;}
+.song-list-left:hover>.song5{background-size:100px;}
+.song-list-left:hover>.song6{background-size:100px;}
+.song-list-left:hover>.song7{background-size:100px;}
+.song-list-left:hover>.song8{background-size:100px;}
+.song-list-left:hover>.song9{background-size:100px;}
+.song-list-left:hover>.song10{background-size:100px;}
+.song-list-left:hover>.song11{background-size:100px;}
+.song-list-left:hover>.song12{background-size:100px;}
+.song-list-left:hover>.song13{background-size:100px;}
+.song-list-left:hover>.song14{background-size:100px;}
+.song-list-left:hover>.song15{background-size:100px;}
+.song-list-left:hover>.song16{background-size:100px;}
+.song-list-left:hover>.song17{background-size:100px;}
+.song-list-left:hover>.song18{background-size:100px;}
+.song-list-left:hover>.song19{background-size:100px;}
+.song-list-left:hover>.song20{background-size:100px;}
+.song-list-left:hover>.song21{background-size:100px;}
+.song-list-left:hover>.song22{background-size:100px;}
+.song-list-left:hover>.song23{background-size:100px;}
+.song-list-left:hover>.song24{background-size:100px;}
+.song-list-left:hover>.song25{background-size:100px;}
+.song-list-left:hover>.song26{background-size:100px;}
+.song-list-left:hover>.song27{background-size:100px;}
+
+
+
+.mod_slide_box
+{
+	margin-top:20px;
+	width:100%;
+	height:358px;
+}
+.slide-box-section
+{
+	margin-top:30px;
+	width:100%;
+	height:190px;
+	position:relative;
+}
+.slide-box-move
+{
+	width:500%;
+	height:100%;
+	position:absolute;
+	left:0;
+}
+.slide-box-ul
+{
+	width:20%;
+	height:100%;
+	float:left;
+}
+
+.slide-box-ul>ul
+{
+	width:90%;
+	height:100%;
+	margin:0 auto 0;
+	display:flex;
+	justify-content:space-between;
+}
+
+.slide-box-ul>ul>li
+{
+	width:48%;
+	height:190px;
+}
+.slide-box-ul>ul>li>img
+{
+	width:100%;
+	height:100%;
+}
+
+.slide-box-ul>ul>li
+{
+	display:flex;
+	justify-content:space-between;
+}
+
+
+
+.mod_slide_top
+{
+	width:100%;
+	height:643px;
+}
+
+.toplist
+{
+	margin-top:30px;
+	width:100%;
+	height:500px;
+}
+.toplist>ul
+{
+	width:90%;
+	height:500px;
+	margin:0 auto 0;
+	display:flex;
+	justify-content:space-around;
+}
+.toplist>ul>li
+{
+	width:165px;
+	height:500px;
+	background:url(../img/bg_index_top.jpg) no-repeat scroll;
+	background-position:0px;
+	color:white;
+}
+
+.toplist>ul>li:nth-of-type(2){background-position:-230px 0px;}
+.toplist>ul>li:nth-of-type(3){background-position:-460px 0px;}
+.toplist>ul>li:nth-of-type(4){background-position:-690px 0px;}
+.toplist>ul>li:nth-of-type(5){background-position:-950px 0px;}
+
+
+
+.toplist-top
+{
+	width:100%;
+	height:30%;
+	margin-top:20px;
+}
+.toplist-top>div:first-child
+{
+	width:100%;
+	height:60%;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+}
+
+.toplist-bottom
+{
+	margin-top:40px;
+	width:100%;
+	height:40%;
+}
+.toplist-bottom>ul
+{
+	width:100%;
+	height:100%;
+	display:flex;
+	flex-direction:column;
+	justify-content:space-around;
+}
+.toplist-bottom>ul>li
+{
+	width:90%;
+	height:47px;
+	display:flex;
+	justify-content:center;
+	cursor:pointer;
+}
+
+.toplist-num
+{
+	width:10%;
+	height:100%;
+	line-height:20px;
+}
+.toplist-song-name
+{
+	width:80%;
+	height:100%;
+}
+
+.toplist-line
+{
+	width:100%;
+	height:30px;
+	position:relative;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+.toplist-line > a
+{
+	display:block;
+	width:30%;
+	height:2px;
+	position:absolute;
+	border:1px solid white;
+	opacity:1;
+}
+.toplist-line>*
+{
+	transition:all ease .4s;
+}
+
+.dis_btn
+{
+	width:30px;
+	height:30px;
+	position:absolute;
+	opacity:0;
+	background:url(../img/play.png) no-repeat scroll center/30px;
+}
+
+
+.toplist-line:hover .dis_btn
+{
+	opacity:1;
+	transform:scale(1.5);
+}
+.toplist-line:hover >a
+{
+	opacity:0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

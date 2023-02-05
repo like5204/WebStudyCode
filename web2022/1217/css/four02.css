@@ -1,0 +1,135 @@
+* {
+		margin: 0px;
+		padding: 0px;
+	}
+
+	#four {
+		width: 840px;
+		height: 650px;
+		margin: auto;
+		position: relative;
+		z-index: 8;
+		top: 50px;
+		left: 100px;
+	}
+
+	#fourtop {
+		height: 140px;
+	}
+
+	#fourtop p {
+		font-size: 23px;
+		text-align: center;
+		margin-top: 70px;
+	}
+
+	#fourtop div {
+		width: 200px;
+		height: 50px;
+		background-color: #31C27C;
+		margin: auto;
+		margin-top: 20px;
+		width: 230px;
+		height: 55px;
+		border-radius: 55px;
+		font-size: 23px;
+		color: white;
+		text-align: center;
+		line-height: 50px;
+	}
+
+	#fourtop div:hover {
+		background-color: #2caf6f;
+	}
+
+	#fourtop a {
+		text-decoration: none;
+	}
+
+	#four #pinglun {
+		height: 250px;
+	}
+
+	#four #pinglun P {
+		font-size: 30px;
+		margin-bottom: 10px;
+	}
+
+	#four #pinglun P span {
+		font-size: 15px;
+		color: #999999;
+		margin-left: 15px;
+	}
+
+	#pinglun textarea {
+		resize: none;
+		outline: none;
+		width: 940px;
+		border: 0px;
+		background-color: #f5f5f5;
+		min-height: 120px;
+		margin: 10px;
+		font-size: 22px;
+		font-weight: 900px;
+		padding: 20px;
+	}
+
+	#pinglun #boxs {
+		width: 100%;
+
+	}
+
+	#four #jie {
+		position: relative;
+		top: -50px;
+		left: 870px;
+		color: #a4aaaf;
+	}
+
+	#four #jie span {
+		color: #31C27C;
+	}
+
+	#four #pic img {
+		width: 30px;
+		position: relative;
+		left: 145px;
+	}
+
+	#four #pic {
+		margin-left: 620px;
+	}
+
+	#four #pic span {
+		background-color: #31C27C;
+		color: white;
+		display: inline-block;
+		line-height: 29px;
+		width: 80px;
+		text-align: center;
+		margin-left: 28px;
+		position: relative;
+		top: -10px;
+		left: 125px;
+		height: 30px;
+	}
+
+	#four #foot div {
+		font-size: 18px;
+		margin-left: 15px;
+	}
+
+	#four #foot div:last-of-type {
+		margin-top: 10px;
+		width: 810px;
+		height: 130px;
+		border-top: #C9C9C9 1px solid;
+		font-size: 45px;
+		color: red;
+		text-align: center;
+		line-height: 120px;
+	}
+
+	#four #pic span:hover {
+		background-color: #2CAF6F;
+	}

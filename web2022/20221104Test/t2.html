@@ -1,0 +1,44 @@
+<!DOCTYPE HTML5>
+<html>
+	<head>
+		<meta charset="utf8"/>
+		<title>lxl</title>
+		<script src="jquery-3.6.1.min.js"></script>		
+		<style>
+			.box
+			{
+				width:100px;
+				height:100px;
+				background:red;
+				float:left;
+				margin-right:10px;
+			}
+		</style>
+		<script>
+			$(document).ready(function()
+			{
+				let a = $("span, p, button");
+
+				console.log(a);
+				
+
+				let b = $("*");
+				console.log(b);
+				
+			});
+		</script>
+	</head>
+
+	<body>
+		<a>sdfld</a>
+		<span>123</span>
+		<p>Hello World</p>
+		<button id="btn">Click</button>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</body>
+</html>
+

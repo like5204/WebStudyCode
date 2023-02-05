@@ -1,0 +1,181 @@
+#sixmain {
+	height: 573px;
+	width: 1300px;
+	margin: auto;
+	background: linear-gradient(#f2f2f2, #fafafa);
+	position: relative;
+	overflow: hidden;
+}
+
+#sixmain #title {
+	position: relative;
+	top: 10px;
+	height: 70px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 70px;
+	color: #333333;
+}
+
+#sixmain #title span {
+	margin-left: 10px;
+}
+
+#sixmain ul {
+	width: 1200px;
+	height: 50px;
+	margin: auto;
+	margin-top: 20px;
+}
+
+#sixlun ul li {
+	display: block;
+	float: left;
+	list-style: none;
+	margin-left: 40px;
+
+}
+
+#sixlun ul li:nth-child(1) {
+	margin-left: 295px;
+}
+
+#sixlun ul li:last-child {
+	margin-left: 305px;
+}
+
+#sixlun ul li a {
+	color: black;
+	text-decoration: none;
+}
+
+#sixlun ul li a:hover {
+	color: #7dd1a9;
+}
+
+#sixlun {
+	height: 380px;
+	width: 1040px;
+	margin: auto;
+}
+
+#sixlun dl dd img {
+	transition: all .2s linear;
+}
+
+#sixlun dl dd {
+	width: 200px;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 25px;
+}
+
+#sixlun dl dd:last-child {
+	margin: 0px;
+}
+
+#sixlun dl {
+	overflow: hidden;
+}
+
+#sixlun p {
+	font-size: 14px;
+}
+
+#sixlun p a {
+	color: black;
+	line-height: 25px;
+	text-decoration: none;
+}
+
+#sixlun p a:hover {
+	color: #7dd1a9;
+}
+
+#sixlun p a:last-child {
+	color: #bfc9c9;
+}
+
+#sixmain #navdian {
+	text-align: center;
+}
+
+#sixmain #navdian a {
+	height: 50px;
+	margin: 10px;
+
+
+}
+
+#sixlun #navdian a:first-child span {
+	background-color: #afafaf;
+}
+
+#sixmain #navdian a:hover span {
+	background-color: #afafaf;
+}
+
+#sixmain #navdian a span {
+	list-style: none;
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background-color: #e1e1e1;
+	border-radius: 50%;
+	margin: 20px 0px;
+	margin-top: 5px;
+
+}
+
+#sixmain #left6 {
+	position: absolute;
+	z-index: 1;
+	top: 270px;
+	width: 80px;
+	left: -122px;
+	height: 100px;
+}
+
+#sixmain #right6 {
+	position: absolute;
+	right: 0px;
+	top: 270px;
+	z-index: 1;
+	width: 80px;
+	left: 1340px;
+	height: 100px;
+}
+
+#sixmain .box6 {
+	position: relative;
+	display: inline-block;
+	width: 200px;
+	height: 120px;
+	overflow: hidden;
+}
+
+#sixlun .bic {
+	position: absolute;
+	height: 50px;
+	width: 50px;
+	top: 40px;
+	left: 75px;
+	z-index: 10;
+	opacity: 0;
+	transition: all .2s linear;
+}
+
+#box6 {
+	width: 200px;
+	height: 120px;
+}
+
+#sixlun span:hover #box6 {
+	transform: scale(1.05);
+}
+
+#sixlun span:hover .bic {
+	opacity: 1;
+	transform: scale(1.5);
+}

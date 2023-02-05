@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/model.css">
+    <title></title>
+    <style>
+    	main
+	{
+		display:flex;
+		flex-direction:column;
+		align-items:center;
+		justify-content:top;
+	}
+	.addRow{position:relative;width:80%;}
+    	.msg-ul
+	{
+		width:80%;
+	}
+	.addRow li, .msg-ul li
+	{
+		width:100%;
+		height:80px;
+		position:relative;
+	}
+	.addRow li{float:left;}
+	.msg-ul li ul, .addRow
+	{
+		width:100%;
+		position:absolute;
+		height:100%;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+	}	
+	.addRow{position:relative;width:80%;}
+	.addRow input{width:80%;height:40%;border-radius:5px;outline:0;border:0;opacity:0.8;font-size:15px;text-indent:5px;}
+	.addRow li, .msg-ul li ul li{border:1px solid black;line-height:80px;text-align:center;border-right:none;}
+	.addRow li:last-child, .msg-ul li ul li:last-child{border-right:1px solid black;cursor:pointer;}
+    </style>
+    <script>
+        window.onload=function()
+        {
+        } 
+    </script>
+</head>
+<body>
+       <article>
+       		<header>
+			<h2>学生信息管理系统</h2>
+			<div class="searchBox">
+				<div>
+				<input type="text" placeholder="搜索"/>
+				<span></span>
+				</div>
+			</div>
+
+		</header>
+		<main>
+			<ul class="msg-ul">
+				<li>
+					<ul>
+						<li>序号</li>
+						<li>学号</li>
+						<li>姓名</li>
+						<li>班级</li>
+						<li>电话</li>
+						<li>删除</li>
+					</ul>	
+				</li>
+				<li>
+					<ul>
+						<li>1</li>
+						<li>20190697</li>
+						<li>lxl</li>
+						<li>计科201</li>
+						<li>17623715204</li>
+						<li>删除</li>
+					</ul>	
+				</li>
+				<li>
+					<ul>
+						<li>2</li>
+						<li>123456</li>
+						<li>xyz</li>
+						<li>网络</li>
+						<li>987654</li>
+						<li>删除</li>
+					</ul>	
+				</li>
+				<li>
+					<ul>
+						<li>3</li>
+						<li>123456</li>
+						<li>xyz</li>
+						<li>网络</li>
+						<li>987654</li>
+						<li>删除</li>
+					</ul>	
+				</li>
+			</ul>
+			
+			<ul class="addRow">
+				<li>4</li>
+				<li><input type="text" placeholder="学号"/></li>
+				<li><input type="text" placeholder="姓名"/></li>
+				<li><input type="text" placeholder="班级"/></li>
+				<li><input type="text" placeholder="电话"/></li>
+				<li>添加</li>
+			</ul>
+
+		</main>
+		<footer>
+			<h4>这是一个学生信息管理系统</h4>
+			<h5>
+				<a href="https://beian.miit.gov.cn/" target="_blank">渝ICP备20221212037号</a>
+				
+				<img src="img/备案图标.png" alt="">
+
+				<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=50011502000">渝公网安备 50011502000号</a>
+			
+			</h5>
+		</footer>
+	</article>
+</body>
+</html>

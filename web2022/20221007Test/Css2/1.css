@@ -1,0 +1,38 @@
+*{margin:0;padding:0;list-style-type:none;}
+article{width:100%;height:800px;}
+header{width:100%;height:70px;color:#66caf7;text-align:center;display:flex;align-items:center;justify-content:center;}
+header>p{
+	height:70px;
+	width:200px;
+	font-size:28px;
+	line-height:70px;
+}
+header>img:first-child{
+	width:200px;
+	height:65px;
+	}
+header>img+img{
+	width:65px;
+	height:65px;
+	}
+main{
+	width:100%;
+	height:660px;
+	background:url("bg_1.png") no-repeat center center/cover;
+	position:relative;
+}
+main > div{
+	width:15%;
+	height:30%;
+	position:absolute;
+	left:0;bottom:0;
+	background:url("bg_2.png") no-repeat center center/cover
+}
+footer{
+	width:100%;
+	height:40px;
+	text-align:center;
+	font-size:25px;
+
+}
+

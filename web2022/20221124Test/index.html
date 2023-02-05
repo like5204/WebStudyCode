@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="jquery-3.6.1.min.js"></script>
+    <title>lxl</title>
+    <style>
+        *{margin:0;padding:0;list-style-type:none;box-sizing:border-box;}
+       article
+       {
+		width:50%;
+		background:#ccc;
+       }
+       #left
+       {
+		width:20%;
+		height:100%;
+		float:left;
+       }
+       .small-pic
+       {
+		width:100%;
+		height:500px;
+		position:relative;
+		border:1px solid black;
+		border-right:4px solid black;
+       }
+       .small-pic ul
+       {
+		width:100%;
+		height:50%%;
+		position:relative;
+		top:50%;
+		display:flex;
+		flex-direction:column;
+		align-items:end;
+		justify-content:center;
+       }
+       .small-pic ul li
+       {
+       		margin-bottom:15px;
+		width:40px;
+		height:40px;
+		border:1px solid black;
+		background:black;
+       		background-repeat:no-repeat;
+		background-size:25px;
+		background-position:center;
+       		cursor:pointer;
+       }
+	.small-pic ul li:nth-of-type(1){background-image:url("img/purchase-2.png");}
+	.small-pic ul li:nth-of-type(2){background-image:url("img/heart.png");}
+	.small-pic ul li:nth-of-type(3){background-image:url("img/time.png");}
+	#right
+	{
+		width:80%;
+		height:auto;
+		float:left;
+		border:1px solid black;
+		display:none;
+	}
+	.main
+	{
+		width:100%;
+		height:80%;
+		background:white;
+		border-bottom:1px solid black;
+	}
+	.main > h3
+	{
+		text-indent:2.5em;
+		height:45px;
+		line-height:45px;
+		background:#eee url("img/purchase.png") no-repeat 10px center/30px;
+		position:relative;
+	}
+	.main > h3 > a
+	{
+		position:absolute;
+		right:0;
+		width:45px;
+		height:45px;
+		background:url("img/close.png") no-repeat center/30px;
+	}
+	.main > ul
+	{
+		width:100%;
+		height:80%;
+	}
+	.main > ul > li
+	{
+		width:100%;
+		height:35%;
+		background:#ccc;
+		margin-top:20px;
+		border:1px solid black;
+	}
+	.main > ul > li:first-child{margin-top:0;}
+	.adv
+	{
+		width:100%;
+		height:40px;
+		padding:5px 5px;
+		display:flex;
+		align-items:center;
+		justify-content:space-between;
+	}
+	.adv > button
+	{
+		width:10%;
+		height:30px;
+		background:rgb(1,1,1);
+		border:0;
+		color:white;
+	}
+	.adv > p
+	{
+		width:80%;
+		height:30px;
+		line-height:30px;
+	}
+	.msg
+	{
+		width:100%;
+		height:80px;
+		padding:10px;
+		display:flex;
+	}
+	.msg >  img
+	{
+		width:20%;
+		max-width:40px;
+		height:40px;
+		border-right:1px solid black;
+	}
+	.msg > div
+	{
+		width:70;
+		height:auto;
+
+	}
+	.msg > div>  p
+	{
+		width:100%;
+		height:40px;
+	}
+	.footer
+	{
+		width:100%;
+		height:50px;
+		display:flex;
+	}
+
+	.footer > div
+	{
+		width:50%;
+		height:100%;
+	}
+	.footer > div:first-child
+	{
+	}
+	.footer > div:first-child>p{text-indent:2em;}
+	.footer > div:last-child
+	{
+		display:flex;
+		align-items:center;
+		justify-content:center;
+	}
+	.footer > div:last-child > button
+	{
+		width:60%;
+		height:40px;
+		border:0px;
+	}
+    </style>
+    <script>
+        window.onload=function()
+        {
+		let oTag = document.querySelectorAll(".small-pic li")[0];
+		let oR = document.querySelector("#right");
+
+		let timer = null;
+
+		oTag.onmouseover=oR.onmouseover=function()
+		{
+			clearTimeout(timer);
+			oR.style.display = "block";
+		}
+		oR.onmouseout=oTag.onmouseout=function()
+		{
+			timer = setTimeout(function()
+			{
+				oR.style.display = 'none';
+			},300);
+		}
+        }
+    </script>
+</head>
+<body>
+        <article>
+            <div id="left">
+                <div class="small-pic">
+                    <ul>
+                        <li><a href="javascript:;"></a></li>
+                        <li><a href="javascript:;"></a></li>
+                        <li><a href="javascript:;"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="right">
+		<div class="main">
+			<h3>购物车<a href="javascript:;"></a></h3>
+			<ul>
+				<li>
+					<div class="adv">
+						<button>满赠</button>
+
+						<p>已购买600元，您可领取赠品</p>
+					</div>
+					<div class="msg">
+						<img src="img/purchase.png"/>
+						<div>
+						<div>美的(Midea) BCD-206TM(E)206升静音/省电/三门冰箱(闪白银)</div>
+						<p>$1398.00 x 1</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="adv">
+						<button>满赠</button>
+
+						<p>已购买600元，您可领取赠品</p>
+					</div>
+					<div class="msg">
+						<img src="img/purchase.png"/>
+						<div>
+						<div>美的(Midea) BCD-206TM(E)206升静音/省电/三门冰箱(闪白银)</div>
+						<p>$1398.00 x 1</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="adv">
+						<button>满赠</button>
+
+						<p>已购买600元，您可领取赠品</p>
+					</div>
+					<div class="msg">
+						<img src="img/purchase.png"/>
+						<div>
+						<div>美的(Midea) BCD-206TM(E)206升静音/省电/三门冰箱(闪白银)</div>
+						<p>$1398.00 x 1</p>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="footer">
+			<div>
+				<p>0件商品</p>
+				<p>共计: $113</p>
+			</div>
+
+			<div>
+				<button>去购物车结算</button>
+			</div>
+		</div>
+	    </div>
+        </article>
+</body>
+</html>

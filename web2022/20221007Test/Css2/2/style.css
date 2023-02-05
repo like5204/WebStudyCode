@@ -1,0 +1,7 @@
+		.left-column{width:30%; height:551px;float:left;}
+		.left-top{width:100%;height:50px;background:#b5d6f9;text-align:center;padding:5px 5px 0 0;}
+		.left-top>h5{width:80%;font-size:18px;background:#3399fe;border-radius:10px;margin:10px 10px auto auto;padding:2px 2px 0 0}
+		.left-tab{background:#d5db39;text-align:center;padding:5px 5px 0 0;}
+		.left-tab>li{width:100%;height:40px;line-height:40px;}
+		a{text-decoration:none;}
+		iframe{width:70%; height:551px;overflow:hidden;display:block;float:left;}

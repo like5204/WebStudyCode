@@ -1,0 +1,15 @@
+user table
+create table user (account  varchar(12) primary key, pwd varchar(10) not null );
+
+insert into user values('123','123');
+
+
+student table
+
+create table student (id char(8) primary key, name nvarchar(6) not null, specialty nvarchar(16) not null, phone varchar(13) not null);
+
+insert into student values('20190697','lxl','计科201','17623715204');
+insert into student values('20190567','小明','物联','123456789');
+insert into student values('20191234','张三','电子','1894376849');
+insert into student values('20195952','李四','网络','1748294758');
+insert into student values('20184382','小红','网络','19823716565');
