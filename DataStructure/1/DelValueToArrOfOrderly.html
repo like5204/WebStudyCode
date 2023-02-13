@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <style>
+        *{margin:0;padding:0;list-style-type:none;box-sizing:border-box;}
+        
+    </style>
+    <script>
+        window.onload=function()
+        {
+           	let arr = [3, 9, 12, 14, 49, 50, 54];
+			
+		function del(arr, val)
+		{
+			//Supposing val exist.
+
+			let pos = -1;
+
+			for(let i = 0; i < arr.length; i++)
+			{
+				if(arr[i] === val)
+				pos = i;
+			}
+
+			for(let i = pos+1; i < arr.length; i++)
+			{
+				arr[i-1] = arr[i];
+			}
+
+			arr.pop();
+		}
+
+		del(arr, 14);
+		del(arr,49);
+		
+
+		// O(n)
+		
+
+		console.log(arr);
+
+        }
+    </script>
+</head>
+<body>
+        
+</body>
+</html>

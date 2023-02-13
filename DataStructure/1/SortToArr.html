@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <style>
+        *{margin:0;padding:0;list-style-type:none;box-sizing:border-box;}
+        
+    </style>
+    <script>
+        window.onload=function()
+        {
+		let arr = [12,54,3,9,14,50,49];
+		
+		console.log(arr);
+		for(let i = 0; i < arr.length; i++)// n
+		{
+
+			for(let j = 0; j < arr.length-1; j++)// n - 1
+			{
+
+				if(arr[j] > arr[j+1])
+				{
+					let tmp = arr[j];
+					arr[j] = arr[j+1];
+					arr[j+1] = tmp;
+				}
+			}
+		}
+		
+		//O(n^2)
+		console.log(arr);
+	
+        }
+    </script>
+</head>
+<body>
+        
+</body>
+</html>
