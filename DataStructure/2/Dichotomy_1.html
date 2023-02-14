@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <style>
+        *{margin:0;padding:0;list-style-type:none;box-sizing:border-box;}
+        
+    </style>
+    <script>
+        window.onload=function()
+        {
+           	//generate date of arr
+
+		let arr = [];
+
+		for(let i = 0; i < 100; i++)
+		{
+			arr.push(Math.floor(Math.random()*100));
+		}
+
+		arr.sort((a,b)=>b-a);
+
+		console.log(arr);
+
+		// find number by function
+
+		function findInOrdered(arr, val)
+		{
+
+			let s = 0;
+			let e = arr.length - 1;
+			//起始位置
+			//最后位置
+
+			while(s <= e)
+			{
+
+				let center = Math.floor((s + e) / 2);
+
+				if(arr[center] === val){
+					return center;
+				}
+				else if(arr[center] < val){ //升序对应的是 当中间的值 大于 需要查找的值时 移动末尾e的位置， 降序与之相反， 大于时移动开始s的下标
+					e = center - 1;
+				}
+				else{
+					s = center + 1;
+				}
+			
+			}
+		
+			return -1;
+		}	
+
+
+		let o = findInOrdered(arr, 6);
+
+		console.log(o);
+		
+
+
+		// 最优: 1
+		// 最差: ?
+	
+		
+		// n个数       分几次
+		//  4	     	 2
+		//  8	     	 3
+		// 16		 4
+		// 32		 5
+
+
+		// 可得  log2(n)次
+
+
+        }
+    </script>
+</head>
+<body>
+        
+</body>
+</html>
