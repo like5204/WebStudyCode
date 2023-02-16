@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="../libs/vue.js"></script>
+    <title></title>
+    <style>
+        *{margin:0;padding:0;list-style-type:none;box-sizing:border-box;}
+	#root{width:100%;height:400px;}
+       	tr,td{border:1px solid black;} 
+	button{width:25px;height:20px;}
+    </style>
+</head>
+<body>
+       <div id="root">
+
+       		<table>
+			<thead>
+				<tr>
+					<td>商品名称</td>
+					<td>商品库存</td>
+					<td>操作</td>
+				</tr>
+			</thead>
+			<tbody v-for="good in goods">
+				<tr>
+					<td>{{good.name}}</td>
+					<td>{{good.stock}}</td>
+					<td>
+						<button v-on:click="fn(good)">Del</button>
+						<button>Up</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+    <script>
+		
+		new Vue({
+			el:"#root",
+			data:{
+          	  	goods:[
+				{name:"Apple", stock:39},
+				{name:"Banana", stock:10},
+				{name:"Coffee", stock:5}
+			]
+			},
+			methods:{
+				fn(g)
+				{
+					this.goods = this.goods.filter(good=>good!=g);
+				}
+			}
+		});
+
+
+    </script>
+</html>
