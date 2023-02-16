@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="../libs/vue.js"></script>
+    <title></title>
+    <style>
+        *{margin:0;padding:0;list-style-type:none;box-sizing:border-box;}
+       	input{border:1px solid black;} 
+    </style>
+</head>
+<body>
+       <div id="root">
+		<input type="text" :value="name" />
+		<br/>
+       		<span>{{s1}}</span>
+		<br/>
+		<span v-html="s2"></span>
+		<br/>
+		<br/>
+		
+		<div v-on:click="f2">
+		<button v-on:click.stop="f1">按钮</button>
+
+		</div>
+
+
+		<input type="text" v-model:value="name"/>
+       </div>
+</body>
+    <script>
+           	let vm = new Vue({
+			el: "#root",
+			data:{
+				name:"lxl",
+				s1: "<h1>This is span1</h1>",
+				s2: "<h1>This is span2</h1>"
+			},
+			methods:{
+				f1:function(){
+					alert("f1");
+				},	
+				f2:function(){
+					alert("f2");
+				}
+			}
+		});
+    </script>
+</html>
