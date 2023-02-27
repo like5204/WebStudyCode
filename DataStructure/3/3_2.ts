@@ -9,11 +9,11 @@
 //插入 (value, index)
 
 
-class list<T>
+class List<T>
 {
-	private  size = 10;//标记数组大小
-	private  values = new Array<T>(this.size);//初始化数组
-	private  length = 0;
+	protected  size = 10;//标记数组大小
+	protected  values = new Array<T>(this.size);//初始化数组
+	protected  length = 0;
 	
 	//获取
 	getItem(index:number)
@@ -128,65 +128,27 @@ class list<T>
 
 		}
 
-		
-
-
-
 
 	}
+
+
+	search(value:<T>)
+	{
+		for(let i = 0; i < this.length;i++)
+		{
+			if(this.values[i] == value)return i;
+		}
+
+		return -1;
+	}
+		
 
 }
 
 
-let oList = new list();
-
-console.log(oList);
-
-
-oList.append(1);
-oList.append(2);
-oList.append(3);
-oList.append(4);
-oList.append(5);
-oList.append(6);
-oList.append(7);
-
-
-console.log(oList);
-
-oList.insert(101, 1);
-
-oList.insert(102, 4);
-
-oList.insert(103, 8);
-oList.insert(103,7);
-
-console.log(oList);
 
 
 
+class OrderList<T> extends List
+{
 
-oList.setItem(6, 52);
-oList.setItem(7,55);
-
-console.log(oList);
-
-
-oList.delete(6);
-console.log(oList);
-
-
-
-
-oList.delete(2);
-console.log(oList);
-oList.delete(3);
-console.log(oList);
-oList.delete(5);
-console.log(oList);
-oList.delete(1);
-console.log(oList);
-oList.delete(1);
-console.log(oList);
-oList.delete(1);
-console.log(oList);
