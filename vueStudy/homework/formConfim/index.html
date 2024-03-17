@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="libs/vue.js"></script>
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333366;
+        }
+
+        h2,
+        h3 {
+            color: #336699;
+        }
+
+        ol,
+        ul {
+            line-height: 1.6;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .important {
+            font-weight: bold;
+            color: #ff0000;
+        }
+
+        html,
+        body {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #app {
+            width: 100%;
+            height: 100%;
+        }
+
+        form {
+            width: 100%;
+            height: 100%;
+        }
+
+        .back {
+            position: fixed;
+            /* 使用fixed定位，使遮罩层覆盖整个页面 */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.54);
+            /* 使用rgba设置背景颜色和透明度，实现暗淡效果 */
+            z-index: 1;
+            /* 确保遮罩层在背景之上 */
+        }
+
+        #box1,
+        #box2 {
+            width: 70%;
+            border: 1px solid black;
+            border-radius: 4px;
+
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* 使弹窗居中显示 */
+            padding: 20px;
+            background: white;
+            /* 弹窗背景颜色 */
+            z-index: 2;
+            /* 确保弹窗在遮罩层之上 */
+        }
+
+        #box1 {
+            height: 75%;
+        }
+
+        #box2 table {
+            width: 100%;
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            padding: 10px 5px;
+            justify-content: space-between;
+            height: auto;
+            background: #eee;
+        }
+
+        header button {
+            width: 30px;
+            border: none;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        main {
+            height: 70%;
+            text-indent: 2em;
+            overflow-y: auto;
+            line-height: 30px;
+            font-size: 14px;
+            padding-top: 30px;
+        }
+
+        #box2 main {
+            height: 40%;
+        }
+
+        footer {
+            width: 100%;
+            height: 10%;
+        }
+
+        footer div {
+            padding: 9px 0;
+        }
+
+        #btns {
+            display: flex;
+            justify-content: end;
+        }
+
+        .nextBtn {
+            margin-left: 5px;
+            width: 70px;
+            height: 35px;
+
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nextBtn:hover {
+            background-color: #0056b3;
+        }
+
+        .nextBtn.disabled {
+            background-color: #CCCCCC;
+            cursor: not-allowed;
+        }
+
+        .nextBtn.active {
+            color: white;
+
+        }
+
+        footer p {
+            text-align: right;
+        }
+
+        td input {
+            width: 80%;
+            height: 30px;
+            text-indent: 1.1em;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="app">
+
+        <form action=".">
+
+            <div class="back"></div>
+
+            <div id="box1" v-show="page === 1">
+                <header>
+                    <span>注册</span>
+                    <button>x</button>
+                </header>
+
+                <main v-html="text"></main>
+
+                <footer>
+                    <div>
+                        <input type="checkbox" name="agree" id="a" value="agree" v-model="isAgree">
+                        <label for="a">同意注册协议</label>
+                    </div>
+                    <p>
+                        <button :class="btnClass" @click="changePage(2)" type="button" :disabled="!isAgree">下一步</button>
+                    </p>
+                </footer>
+            </div>
+
+
+            <div id="box2" v-show="page === 2">
+                <header>
+                    <span>注册</span>
+                    <button>x</button>
+                </header>
+
+                <main>
+                    <table>
+                        <tr>
+                            <td align="right">用户名</td>
+                            <td align="center"><input type="text" name="" id="" placeholder="输入用户名" v-model="userName"></td>
+                        </tr>
+                        <tr>
+                            <td align="right">密码</td>
+                            <td align="center"><input type="password" name="" id="" placeholder="输入密码" v-model="pwd"></td>
+                        </tr>
+                        <tr>
+                            <td align="right">确认密码</td>
+                            <td align="center"><input type="password" name="" id="" placeholder="再输一次密码" v-model="pwd2"></td>
+                        </tr>
+                    </table>
+                </main>
+
+                <footer>
+                    <div id="btns">
+                        <button class="nextBtn" @click="changePage(1)" type="button">后退</button>
+                        <button class="nextBtn" type="button" @click="aaa">下一步</button>
+                    </div>
+                </footer>
+            </div>
+        </form>
+    </div>
+
+    <script>
+
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                text: "",
+                isAgree: false,
+                page: 1,
+                userName:"",
+                pwd:"",
+                pwd2:"",
+            },
+            methods: {
+                changePage(p) {
+                    this.page = p;
+
+                },
+                aaa()
+                {  
+                    if(this.userName&&this.pwd&&this.pwd===this.pwd2)
+                    {
+                        alert("成功");
+                    }
+                    else
+                    {
+                        alert("error");
+                    }
+                }
+            },
+            watch: {
+                page() {
+
+                }
+            },
+            computed: {
+                btnClass() {
+                    return this.isAgree ? "nextBtn" : "nextBtn disabled";
+                }
+            },
+            created() {
+                fetch("text.txt").then(res => res.text()).then(res => {
+                    this.text = res;
+                })
+            }
+        });
+    </script>
+</body>
+
+</html>

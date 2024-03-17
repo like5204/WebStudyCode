@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <style>
+        *{margin:0;padding:0;list-style-type:none;box-sizing:border-box;}
+        
+    </style>
+    <script>
+        window.onload=function()
+        {
+			var aBtns = document.querySelectorAll("input");
+
+			for(var i = 0; i < aBtns.length; i++)
+			{
+				(function(i){
+					aBtns[i].onclick=function(){
+						alert(i);
+				};
+				})(i);
+
+				// 闭包的函数传递i来使i在函数里独立
+			}
+
+			for(let i = 0; i < aBtns.length; i++)
+			{
+				aBtns[i].onclick=function()
+				{	alert(i);
+				
+				};
+			}
+
+        }
+    </script>
+</head>
+<body>
+       <input type="button" value="a"> 
+       <input type="button" value="b"> 
+       <input type="button" value="c"> 
+</body>
+</html>

@@ -1,0 +1,48 @@
+#/bin/bash
+#Program:
+#	This is program will accept a fileName of typescript then create
+#	a file of html.
+#History:
+#2023/0220	lxl	First release
+
+
+
+tsName=$1;
+
+if [ -e $1 ];then
+	
+		
+	name=${tsName: 0: $[${#tsName}-3]}
+	#获取输入文件名的前缀
+
+	
+	echo "<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+	<meta charset=\"UTF-8\">
+	<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+	<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+	<title></title>
+	<style>
+		*{margin:0;padding:0;list-style-type:none;box-sizing:border-box;}
+	</style>
+	<script>
+		window.onload=function()
+		{
+		}
+	</script>
+</head>
+<body>
+	<script src=\"$name.js\"></script>
+</body>
+</html>" > $name.html
+
+fi
+
+
+
+
+
+
+
+

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            box-sizing: border-box;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            // let p = new Promise(function (resolve, reject) {
+
+            //     $.ajax({
+            //         url: "1.txt",
+            //         dataType: "json",
+            //         success(res) {
+            //             resolve(res);
+            //         },
+            //         error(res) {
+            //             reject(res);
+            //         }
+            //     })
+            // });
+
+            // let datas = Promise.all([
+            //     $.ajax("1.txt", "json"),
+            //     $.ajax("2.txt", "json"),
+            //     $.ajax("3.txt", "json")
+            // ]).then(([d1,d2,d3])=>
+            // {
+            //     let d4 = JSON.parse(d2);
+            //     console.log(d1[1],d4['name'],d3[2]);
+            // });
+
+            async function show()
+            {
+                let a= 9;
+                let b =10;
+                let p;
+                try
+                {
+
+                    p = JSON.parse(await $.ajax("6.txt", "json"));
+
+                }
+                catch
+                {
+                    console.log("读取错误");
+                }
+
+                if(p?.[0] == 5)
+                {
+                    let p2 = await $.ajax("2.txt", "json");
+                    console.log(p2);
+                }
+                else
+                {
+                    let p3 = await $.ajax("3.txt", "json");
+                    console.log(p3);
+                }
+
+
+            }
+            
+            show();
+
+            
+
+
+
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+{
+	"code": 0,
+	"message": "0",
+	"ttl": 1,
+	"data": {
+		"aid": 305432425,
+		"videos": 1,
+		"tid": 201,
+		"tname": "科学科普",
+		"copyright": 1,
+		"pic": "http://i2.hdslb.com/bfs/archive/1d7cc4b494ae0ceba75df758de7e4cce2dd52907.jpg",
+		"title": "警花测评：警用电击枪威力有多大？一米八小伙的腿都软了？",
+		"pubdate": 1669286661,
+		"ctime": 1669286661,
+		"desc": "",
+		"owner": {
+			"mid": 398582016,
+			"name": "警花说",
+			"face": "https://i0.hdslb.com/bfs/face/869a374461ac9b0a85f2b28dd09b96a7a53a66a3.jpg"
+		},
+		"stat": {
+			"aid": 305432425,
+			"view": 3312978,
+			"danmaku": 3390,
+			"reply": 2029,
+			"favorite": 19996,
+			"coin": 1512,
+			"share": 1734,
+			"now_rank": 0,
+			"his_rank": 85,
+			"like": 153118,
+			"dislike": 0,
+			"vt": 0,
+			"vv": 3312978
+		},
+		"dynamic": "来了！警花说首次实测！警用电击枪打在真人身上啥感觉？来看来三连～",
+		"pub_location": "浙江"
+}

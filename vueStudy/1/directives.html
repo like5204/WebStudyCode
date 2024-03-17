@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="../libs/vue.js"></script>
+    <title></title>
+    <style>
+        *{margin:0;padding:0;list-style-type:none;box-sizing:border-box;}
+        
+    </style>
+    <script>
+        window.onload=function()
+        {
+			let vm = new Vue({
+				el:"#app",
+				data:{
+					vue:"Vue",
+					message:"Hello",
+					items:['apple','banana','coffe'],
+					faye:"https://s1.imagehub.cc/images/2024/03/04/fe855aa38aaa95b43a2684a5725325d0.jpeg"
+				},
+				methods:{
+					sayHi:function(){
+						alert("Hi,good morning");
+					}
+				}
+	
+
+			});
+        }
+    </script>
+</head>
+<body>
+       <div id="app">
+		
+			<h2>Hello, {{vue}}</h2>
+			
+			<br/>
+			<input type="text" v-model="message">
+			<br/>
+			<p>The message is: {{message}}</p>
+			<br/>
+			<br/>
+			
+			<ul v-for="item in items">
+				<li>{{item}}</li>
+			</ul>
+			<br/>
+			<br/>
+			
+			<img v-bind:src="faye" width="340px" height="360px"/>
+
+			<br/>
+			<br/>
+
+
+			<button @click="sayHi">早上好!</button>
+	   </div>
+</body>
+</html>

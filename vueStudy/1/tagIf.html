@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="../libs/vue.js"></script>
+    <title></title>
+    <style>
+        *{margin:0;padding:0;list-style-type:none;box-sizing:border-box;}
+        
+    </style>
+    <script>
+        window.onload=function()
+        {
+           	let vm = new Vue({
+				el:"#app",
+				data:{
+					flag:true
+				}
+	
+			});
+        }
+    </script>
+</head>
+<body>
+	<div id="app">
+	<button v-on:click="flag=!flag">{{flag?"消失":"出现"}}</button>
+	
+	<p v-if="flag">This is p tag</p>
+	<p v-show="flag">This is ppp</p>
+
+	</div>
+
+</body>
+</html>

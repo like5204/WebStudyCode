@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <style>
+        *{margin:0;padding:0;list-style-type:none;box-sizing:border-box;}
+        
+    </style>
+    <script>
+        window.onload=function()
+        {
+            //ES5
+			
+			function Person(name, age)
+			{
+				this.name = name;
+				this.age = age;
+			}
+
+			Person.prototype.showMsg=function()
+			{
+				console.log("Hi, my name is " + this.name);
+				console.log("my age is " + this.age);
+			}
+			
+			function Student(name, age, grade)
+			{
+				Person.call(this, name, age);
+				this.grade = grade;
+			}
+			let p = new Person('lxl', 19);
+			
+
+			
+			Student.prototype = new Person();
+			Student.prototype.constructor = Student;
+			Student.prototype.showGrade=function(){console.log("This is my grade " + this.grade)};
+
+			let s = new Student('lxl', 18, 60);
+			console.log(s);
+
+			s.showMsg();
+			s.showGrade();
+
+
+			
+			console.log("The below is ES6!!!");
+
+			//ES6
+
+			class Fruit
+			{
+				constructor(name, color)
+				{
+					this.name = name;
+					this.color = color;
+				}
+
+				showMsg()
+				{
+					console.log("Hi, my name is " + this.name);
+					console.log("my color is " + this.color);
+				}
+
+			}
+
+			let f = new Fruit('apple', 'green');
+
+			class Banana extends Fruit
+			{
+				constructor(name, color, price)
+				{
+					super(name, color);
+					this.price = price;
+				}
+
+			}
+			let b = new Banana('banana', 'yellow', 4.5);
+
+			b.showMsg();
+
+        
+    </script>
+</head>
+<body>
+        
+</body>
+</html>

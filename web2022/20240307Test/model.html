@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <style>
+        *{margin:0;padding:0;list-style-type:none;box-sizing:border-box;}
+        
+    </style>
+    <script>
+        window.onload=function()
+        {
+           	let url = "http://localhost:8002/1.txt";
+
+			//iPhone
+			let oAjax = new XMLHttpRequest();
+
+			oAjax.open('GET', url, true);
+
+
+			oAjax.onreadystatechange=function()
+			{
+				if(oAjax.readystate==4)
+				{
+					if(oAjax.status==200)
+						console.log(oAjax.responseText);
+				}
+			}
+
+			oAjax.send();
+
+
+        }
+    </script>
+</head>
+<body>
+        
+</body>
+</html>
