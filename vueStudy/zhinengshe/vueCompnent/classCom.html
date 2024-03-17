@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="vue.js"></script>
+    <title></title>
+    <style>
+        *{margin:0;padding:0;list-style-type:none;box-sizing:border-box;}
+        
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- <lxl name="zml"></lxl> -->
+    </div>
+
+    <script>
+        
+        let a = Vue.extend({
+            props:["a", "b"],
+            data(){
+                return{d:111}
+            },
+            template:"<pre>{{a+b}}</pre>"
+        });
+
+        //use 1
+        // let vm = new Vue({
+        //     el:"#app",
+        //     components:{
+        //         lxl:a
+        //     }
+        // })
+
+
+        //use 2
+        let obj = new a({
+            propsData:{
+                a:12,
+                b:15
+            }
+        });
+        let oDiv = document.createElement('div');
+        obj.$mount(oDiv);
+
+        console.log(obj.$el.innerHTML == "27")
+
+
+    </script>
+</body>
+</html>

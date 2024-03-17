@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="vue.js"></script>
+    <title></title>
+    <style>
+        *{margin:0;padding:0;list-style-type:none;box-sizing:border-box;}
+        
+    </style>
+</head>
+<body>
+    <div id="app">
+        <lxl name="zs"></lxl>
+        <lxl name="aaa"></lxl>
+    </div>
+
+    <script>
+        Vue.component("lxl",{
+            props:["name"],
+            data(){
+                return {b:19}
+            },
+            template:`
+                <div>
+                    <span>This is {{name}} my component</span>
+                    <br/>
+                </div>
+            `
+        });
+
+        let vm = new Vue({
+            el:"#app"
+        })
+
+    </script>
+</body>
+</html>
