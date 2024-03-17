@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="vue.js"></script>
+    <title></title>
+    <style>
+        *{margin:0;padding:0;list-style-type:none;box-sizing:border-box;}
+        #app{
+            width:50%;
+            margin:100px auto 0;
+        }
+    </style>
+    
+</head>
+<body>
+     <div id="app">
+           
+            年龄: <input type="text" name="age" placeholder="please input age" v-model:value="age" />
+
+
+     </div>
+    <script>
+         let vm = new Vue({
+            el:"#app",
+            data:{
+                age_t:1
+            },
+            methods:{
+                
+            },
+            computed:{
+                age:{
+                    get(){
+                        return this.age_t;
+                    },
+                    set(v){
+                        v = parseInt(v);
+                        if(v < 0 || v > 150)
+                            this.age_t = 0;
+                        else
+                            this.age_t = v;
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>
