@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <style>
+        *{margin:0;padding:0;list-style-type:none;box-sizing:border-box;}
+        
+    </style>
+</head>
+<body>
+    <div id="app">
+    </div>
+
+    <script>
+
+        //code 1
+        let data = {a:12, b:5, c:8};
+
+
+        let json1 = data;
+        let json2 = data;
+
+
+        json1.a++;
+        console.log(json1.a,json2.a);
+        //同一个json，赋值后为同一个引用
+
+
+        //code 2
+        let data2 = ()=>{return {a:18}};
+
+        let json3 = data2();
+        let json4 = data2();
+
+        json3.a++;
+        console.log(json3.a,json4.a);
+        //每次执行函数都会返回一个 新的json对象
+        //每次调用它都会返回一个新的对象，
+
+
+
+    </script>
+</body>
+</html>

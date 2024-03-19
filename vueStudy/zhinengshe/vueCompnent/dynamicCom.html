@@ -5,47 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="vue.js"></script>
-    <title></title>
+    <title>Document</title>
     <style>
         *{margin:0;padding:0;list-style-type:none;box-sizing:border-box;}
-        
+        img{
+            width:100px;
+            height:100px;
+        }
     </style>
 </head>
 <body>
     <div id="app">
-            <input type="text" v-model:value="com"/>
-            <br/>
-            <component :is="com"/>
+        
     </div>
 
     <script>
-       
+        
+        Vue.component("cmptext",{
+            props: ['content'], // 接收 content 作为 prop
+            template:"<div>{{ content }}</div>" // 使用 content
+        });
 
-        // let a = Vue.extend({
-        //     template:"<span>123</span>"
-        // });
+        Vue.component("cmpimg",{
+            props: ['content'], // 接收 content 作为 prop
+            template:"<div><img :src='content'></div>" // 使用 content 作为图片 src
+        });
 
-        // let b = Vue.extend({
-        //     template:"<span>456</span>"
-        // });
+        Vue.component("cmpad",{
+            props: ['content'], // 接收 content 作为 prop
+            template:"<div>{{ content }}</div>" // 使用 content
+        });
 
-
-        let vm = new Vue({
+       let vm = new Vue({
             el:"#app",
             data:{
-                com:"abc"
+                arr:[
+                    {type:"text", content:"This is text."},
+                    {type:"img", content:"https://s1.imagehub.cc/images/2024/03/04/fe855aa38aaa95b43a2684a5725325d0.md.jpeg"},
+                    {type:"ad", content:"快来下载吧..."},
+                    // 更多项目...
+                ]
             },
-            components:{
-                lxl:{
-                    template:"<span>123</span>"
-                },
-                abc:{
-                    template:"<span>456</span>"
-                }
-            }
-        });
-    
-
+            template:`<div><component v-for="item in arr" :is="'cmp'+item.type" :content="item.content"></component></div>`
+       })
     </script>
 </body>
 </html>
