@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            box-sizing: border-box;
+        }
+
+        #app {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #app img {
+            width: 200px;
+            height: 200px;
+
+            border-radius: 50%;
+        }
+
+        #app div {
+            font-size: 1.5em;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        @keyframes rotateImage {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .rotating {
+            animation: rotateImage 30s linear infinite;
+        }
+
+        #recordImage {
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <div>{{text}}</div>
+        <img id="recordImage" src="https://p1.music.126.net/pwcUlwh9MFZ_V3hGBOPaCQ==/109951169213425474.jpg" />
+
+        <audio src="http://music.163.com/song/media/outer/url?id=29567190.mp3" id="audioPlayer"></audio>
+
+    </div>
+
+
+    <script>
+        const recordImage = document.getElementById('recordImage');
+        const audioPlayer = document.getElementById('audioPlayer');
+
+        // 图片点击事件处理函数
+        recordImage.onclick = function () {
+            // 检查音频是否正在播放
+            if (audioPlayer.paused) {
+                audioPlayer.play(); // 播放音频
+                recordImage.classList.add('rotating'); // 开始旋转图片
+            } else {
+                audioPlayer.pause(); // 暂停音频
+                recordImage.classList.remove('rotating'); // 停止旋转图片
+            }
+        };
+    </script>
+
+
+    <script>
+
+        let data =
+        {
+            imgLink: "https://p1.music.126.net/pwcUlwh9MFZ_V3hGBOPaCQ==/109951169213425474.jpg",
+            text: "梦中的哈德森",
+            musicLink: "http://music.163.com/song/media/outer/url?id=29567190.mp3"
+        }
+
+
+        let app = document.getElementById('app');
+
+        render(app, data);
+
+        function render(el, data) {
+            Array.from(el.childNodes).forEach(node => {
+                if (node.nodeType === document.ELEMENT_NODE) 
+                {
+                    render(node, data); // 递归渲染子元素
+                } else if (node.nodeType === document.TEXT_NODE && node.textContent.match(/\{\{(.+?)\}\}/)) 
+                {
+                    // 直接替换文本内容
+                    node.textContent = node.textContent.replace(/\{\{(.+?)\}\}/g, (match, key) => {
+                        return data[key] || match; // 如果找不到键值，则保留原始文本
+                    });
+                }
+            });
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

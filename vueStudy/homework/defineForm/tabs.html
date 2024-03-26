@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="libs/vue.js"></script>
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        button {
+            border: none;
+            background: #fff;
+            width: 60px;
+            height: 40px;
+            
+            border-radius: 5px;
+        }
+
+        a {
+            text-decoration: none;
+            color: violet;
+        }
+
+        .tabs-content {
+            width: 600px;
+            height: 500px;
+            border: 1px solid black;
+            padding:20px;
+            text-indent: 1.4em;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 28px;
+            letter-spacing: -0.05400000140070915px;
+            word-spacing: 0.01em;
+            word-break: break-word;
+            word-wrap: break-word;
+            color: rgb(36, 36, 36);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <tabs_tit tit="选项1">
+            For each operand that names a file of a type other than directory, ls
+            displays its name as well as any requested, associated information.  For
+            each operand that names a file of type directory, ls displays the names of
+            files contained within that directory, as well as any requested, associated
+            information.
+
+            If no operands are given, the contents of the current directory are
+            displayed.  If more than one operand is given, non-directory operands are
+            displayed first; directory and non-directory operands are sorted separately
+            and in lexicographical order.
+        </tabs_tit>
+
+        <tabs_tit tit="选项1">
+           123
+        </tabs_tit>
+    </div>
+    <script>
+        Vue.component("tabs_tit",
+            {
+                props:['tit'],
+                template: `
+                <div>
+
+                    <button>
+                        {{tit}} 
+                    </button>
+
+                    <div class="tabs-content">
+                        <slot/>
+                    </div>
+
+                </div>
+            `,
+                methods: {
+
+                }
+            });
+
+
+
+        let vm = new Vue({
+            el: "#app",
+            data: {
+
+            },
+            methods: {
+
+            }
+        });
+    </script>
+</body>
+
+</html>

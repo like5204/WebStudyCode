@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="libs/vue.js"></script>
+    <title></title>
+    <style>
+         #_ldialog{width:400px;height:300px;border:1px solid black; margin:50px auto 0;border-radius: 8px;}
+         #_ldialog h3{text-align: center; border-bottom:1px solid #eee; height:30px;}
+         .lxl_content{padding:10px 15px; text-indent: 1.3em; line-height:25px}
+    </style>
+</head>
+
+<body>
+    <div id="app">
+            <lxl-dialog :lxl_title="tit">{{text}}</lxl-dialog>
+    </div>
+    <script>
+        //dialog button table  form  tabs(选项卡)   ==> index.html 组合使用
+        //pagination.html  <lxl lxl_content="123"></lxl>
+
+
+        let a = Vue.component("lxl-dialog", {
+            props:["lxl_title", "lxl_content"],
+            template:`
+                <div id="_ldialog">
+                        <h3>{{lxl_title}}</h3>
+                        <div class="lxl_content">
+                            <slot/>
+                        </div>
+                </div>
+            `,
+        });
+
+
+        let vm = new Vue({
+            el: "#app",
+            data:{
+                text:`You are running Vue in development mode.
+Make sure to turn on production mode when deploying for production.`,
+                tit:"Vue"
+            }
+            // components:{
+            //     lxl:a
+            // }
+            
+        });
+    </script>
+</body>
+
+
+</html>

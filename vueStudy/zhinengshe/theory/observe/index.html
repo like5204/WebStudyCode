@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            box-sizing: border-box;
+        }
+
+      
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        姓名: <input type="text" v-model="name" />  <input type="text" v-model="name" /> <br/>
+        年龄: <input type="text" v-model="age" />  <input type="text" v-model="age" /> <br/>
+    </div>
+
+
+    <script>
+
+        let _data =
+        {
+            name: "张三",
+            age: 18
+        }
+
+
+        let data = new Proxy(_data, {
+           get(target, key) {
+               return target[key]||"";
+           },
+           set(obj, name, val)
+           {
+                obj[name] = val;
+                dataToHtml() //数据修改同步到视图
+                return true;
+           }
+        });
+
+        
+
+        let aText = Array.from(document.querySelectorAll("input"));
+
+        dataToHtml();//初始化数据
+
+        aText.forEach(input=>{
+                input.oninput=function()
+                {
+                    htmlToData(this);
+                    //给input添加输入事件 input修改同步到数据
+                }
+            })
+
+
+        function htmlToData(oText)
+        {
+            let name = oText.getAttribute("v-model");
+            data[name] = oText.value;
+        }
+
+       
+
+
+        function dataToHtml()
+        {
+            aText.forEach(input=>{
+                //
+                let name = input.getAttribute("v-model");
+                input.value = data[name];
+            })
+
+        }
+
+
+    </script>
+</body>
+
+</html>
